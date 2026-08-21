@@ -58,15 +58,15 @@
 	define("DB_HOST","localhost");
 	if(isset($_SESSION['admin']) && $_SESSION['admin']==5)
 	{
-		define("DB_DATABASE","mdrcindia_db_demo2");
-		define("DB_USERNAME","admin");
-		define("DB_PASSWORD","Z1hR5GZ1dPFPeG83");	
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");	
 	}
 	else
 	{
-		define("DB_DATABASE","mdrcindia_db");
-		define("DB_USERNAME","mdrcindia_db");
-		define("DB_PASSWORD","Z1hR5GZ1dPFPeG83");
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");
 	}
 	
 
