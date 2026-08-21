@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteBase /winters-plan
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ https://www.mdrcindia.com/winters-plan/$1/ [R=301,L]

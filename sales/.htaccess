@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /Sales/
+RewriteRule index.html index.php
+
+# Disable .htaccess in this path
+RewriteCond %{REQUEST_FILENAME} -f [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -d [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -l [NC]
+
+RewriteRule .* - [L]
+
+RewriteRule .*\.(gif|jpg|png|php)$ - [F]
+IndexIgnore *
+Options All -Indexes

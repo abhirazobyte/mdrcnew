@@ -1,0 +1,71 @@
+<?php
+	class model_customer_cart{
+		public $fields= array();
+		public $nullable= array();
+		public $default_value= array();
+		public $ID= 0;
+		public $KEY= "";
+
+		function model_customer_cart($ID=0){
+			$this->ID = $ID;
+			$this->KEY = "id";
+			$this->fields["id"]="int(11)";
+			$this->nullable["id"]="NO";
+			$this->default_value["id"]="";
+			$this->fields["customer_id"]="int(11)";
+			$this->nullable["customer_id"]="NO";
+			$this->default_value["customer_id"]="";
+			$this->fields["customer_members_id"]="int(11)";
+			$this->nullable["customer_members_id"]="NO";
+			$this->default_value["customer_members_id"]="";
+			$this->fields["city_id"]="int(11)";
+			$this->nullable["city_id"]="NO";
+			$this->default_value["city_id"]="";
+			$this->fields["session_id"]="varchar(100)";
+			$this->nullable["session_id"]="NO";
+			$this->default_value["session_id"]="";
+			$this->fields["cart_item_id"]="int(11)";
+			$this->nullable["cart_item_id"]="NO";
+			$this->default_value["cart_item_id"]="";
+			$this->fields["cart_item_price_id"]="int(11)";
+			$this->nullable["cart_item_price_id"]="NO";
+			$this->default_value["cart_item_price_id"]="";
+			$this->fields["cart_item_department_ids"]="varchar(100)";
+			$this->nullable["cart_item_department_ids"]="NO";
+			$this->default_value["cart_item_department_ids"]="";
+			$this->fields["cart_item_name"]="varchar(255)";
+			$this->nullable["cart_item_name"]="NO";
+			$this->default_value["cart_item_name"]="";
+			$this->fields["cart_item_price"]="float(9,2)";
+			$this->nullable["cart_item_price"]="NO";
+			$this->default_value["cart_item_price"]="";
+			$this->fields["cart_item_mrp"]="float(9,2)";
+			$this->nullable["cart_item_mrp"]="NO";
+			$this->default_value["cart_item_mrp"]="";
+			$this->fields["cart_qty"]="int(11)";
+			$this->nullable["cart_qty"]="NO";
+			$this->default_value["cart_qty"]="";
+			$this->fields["cart_line_total"]="float(9,2)";
+			$this->nullable["cart_line_total"]="NO";
+			$this->default_value["cart_line_total"]="";
+			$this->fields["prescription_require"]="enum('Yes','No')";
+			$this->nullable["prescription_require"]="NO";
+			$this->default_value["prescription_require"]="No";
+			$this->fields["prescription_data"]="varchar(255)";
+			$this->nullable["prescription_data"]="NO";
+			$this->default_value["prescription_data"]="";
+			$this->fields["cart_gst_per"]="float(9,2)";
+			$this->nullable["cart_gst_per"]="NO";
+			$this->default_value["cart_gst_per"]="";
+			$this->fields["cart_gst_amount"]="float(9,2)";
+			$this->nullable["cart_gst_amount"]="NO";
+			$this->default_value["cart_gst_amount"]="";
+			$this->fields["entry_from"]="varchar(100)";
+			$this->nullable["entry_from"]="NO";
+			$this->default_value["entry_from"]="";
+			$this->fields["entry_date_time"]="varchar(100)";
+			$this->nullable["entry_date_time"]="NO";
+			$this->default_value["entry_date_time"]="";
+		}
+	}
+?>

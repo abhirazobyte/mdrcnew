@@ -1,0 +1,241 @@
+// <!-- Start: Active page_desc List  -->
+$(document).ready(function(){
+	$('#table_page_desc').DataTable({
+		"order": [[ 1, "desc" ]],
+		"columnDefs": [ { 'targets': [0,1,2],"orderable": false } ],
+  		'autoWidth':false,
+		'processing': true,
+		'serverSide': true,
+		'serverMethod': 'post',
+		'ajax': {
+			'url':'scripts/ajax/index.php?method=page_desc&actionType=page_desc_list',
+			'data': function (d) {
+				d.pageInfoId = $('#page_info_id').val();
+			},
+		},
+		'columns': [
+		 	{ "data": "checkbox" },
+		  	{ "data": "id" },
+			{ "data": "city_name" },
+            { "data": "description" },
+            { "data": "created_at" },
+            { "data": "btn" }
+		],
+		 language:
+		 {
+			searchPlaceholder: 'Search...',
+			sSearch: '',
+			lengthMenu: '_MENU_ items/page',
+	    }
+	});
+	$('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
+	$('[data-toggle="tooltip"]').tooltip();
+});
+// <!-- End: Active page_desc List -->
+// <!-- Start: Active page_desc addedit modal-->
+$(document).on("click",".page_desc_addedit_onclick", function ()
+{
+	getId=$(this).data("id");
+	pageInfoId=$(this).data("page_info_id");
+	$('#custom_ajax_preloader').show();
+	$.ajax({
+	type: 'POST',
+	url: 'scripts/modal/index.php?method=page_desc_addedit&id='+getId+'&page_info_id='+pageInfoId,
+	dataType : 'html',
+	data: $(this).serialize()
+	})
+	.done(function(data)
+	{
+		// show the response
+		$('#ajax_modal_container').html(data);
+		$('#modal_page_desc_addedit').modal('show');
+		$('#custom_ajax_preloader').hide();
+		$('#page_desc_form').parsley();
+		$.getScript("scripts/js/ajax.js");
+	})
+	.fail(function()
+	{
+		// just in case posting your form failed
+		alert( "Try again." );
+		$('#custom_ajax_preloader').hide();
+	});
+});
+// <!-- End: Active page_desc addedit modal -->
+// <!-- Start: modal page_desc addedit submit  -->
+$(document).on("click",".page_desc_modal_submit", function ()
+{
+	var description = CKEDITOR.instances['descriptions'].getData();
+    $('#page_desc_form').validate({
+		rules:
+		{
+			description: {
+				required: true,
+				minlength:5,
+				maxlength:5
+			},
+		},
+		submitHandler: function (form)
+		{
+			$('.page_desc_modal_submit').html('<span class="spinner-border spinner-border-sm mg-r-5" role="status" aria-hidden="true"></span> Loading...');
+			$(".page_desc_modal_submit").attr("disabled", true);
+			var dataString = new FormData(form);
+			dataString.append('method', 'page_desc');
+			dataString.append('actionType', 'page_descAddEdit');
+			dataString.append('description', description);
+			$.ajax({
+                dataType: 'json',
+                type: "POST",
+				url: "scripts/ajax/index.php",
+				data: dataString,
+				cache:false,
+          	  	contentType: false,
+           	 	processData: false,
+	 			success: function (responseData)
+				{
+					$('.page_desc_modal_submit').html('Submit');
+					$(".page_desc_modal_submit").attr("disabled", false);
+				  if(responseData.RESULT==1)
+				  {
+							$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>'+responseData.msg+'</p>', {type:'danger',delay: 3000,allow_dismiss: true,offset: {from: 'top', amount: 20} });
+				  }
+				  else  if(responseData.RESULT==0)
+				  {
+							$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>'+responseData.msg+'</p>', {type:'success',delay: 3000,allow_dismiss: true,offset: {from: 'top', amount: 20} });
+							$('#modal_page_desc_addedit').modal('hide');
+							var oTable = $('#table_page_desc').dataTable( );
+							oTable.api().ajax.reload(null, false);
+				  }
+                },
+                error: function (responseData) {
+                    console.log('Ajax request not recieved!');
+                }
+            });
+            return false;
+        }
+    });
+});
+// <!-- End: modal page_desc addedit submit -->
+// <!-- Start: page_desc single delete  -->
+$(document).on("click",".page_desc_delete_onclick", function ()
+{
+	var getid=$(this).data('id');
+	if(getid!='')
+	{
+		 swal({
+                title: "Are you sure?",
+                text: "You will not be able to undo after this action!",
+                type: "warning",
+                showCancelButton: true,
+				cancelButtonClass: 'btn-primary',
+                confirmButtonClass: 'btn-warning',
+                confirmButtonText: "Yes, delete it!",
+				confirmButtonClass: "confirm btn btn-lg btn-warning xyz",
+                closeOnConfirm: true
+            }, function (r)
+			{
+				if(r == true)
+				{
+					$.ajax(
+					{
+						  type: "POST",
+						  dataType: 'json',
+						  url: "scripts/ajax/index.php",
+						  data: "method=page_desc&actionType=page_descDelete&getid="+getid,
+						  success: function(responseData)
+						  {
+								  if(responseData.RESULT==0)
+								  {
+									var oTable = $('#table_page_desc').dataTable( );
+									oTable.api().ajax.reload(null, false);
+									$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>Record Deleted Successfully.</p>', {type:'warning',delay: 3000,allow_dismiss: true,offset: {from: 'top', amount: 20} });
+ 									return false;
+								  }
+								  else
+								  {
+									  swal({ title: "Try Again...",
+									  text: data.msg,
+									  type: "warning",
+									   timer: 1000
+									  });
+									  return false;
+								  }
+							  }
+						  }
+					  );
+				}
+				else
+				{
+					return false;
+				}
+            });
+	}
+	else
+	{
+		swal({ title: "Try Again...",
+                text: "Oops Something gone wrong...",
+                type: "warning",
+				 timer: 1500
+            });
+			return false;
+	}
+});
+// <!-- End: page_desc single delete  -->
+// <!-- Start: page_desc Multi delete  -->
+function mulitple_page_desc_select()
+{
+			var chk_vals=[];
+	  	    $('input[name="del[]"]:checked').each(function() {chk_vals.push($(this).val());});
+			if(chk_vals.length>0)
+			{
+				var ids=chk_vals.join(',');
+				swal({
+					title: "Are you sure?",
+					text: "you want to delete records?",
+					type: "warning",
+					showCancelButton: true,
+					cancelButtonClass: 'btn-primary',
+					confirmButtonClass: 'btn-warning',
+					confirmButtonText: "Yes, delete it!",
+					confirmButtonClass: "confirm btn btn-lg btn-warning xyz",
+					closeOnConfirm: true
+					},
+					function (r){
+						if(r == true)
+						  {
+							  $.ajax({
+							  type: "POST",
+							  dataType: 'json',
+							  url: "scripts/ajax/index.php",
+							  data: "method=page_desc&actionType=page_descMultiDelete&ids="+ids,
+							  success: function(responseData){
+								  if(responseData.RESULT==0)
+								  {
+									  $.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>'+responseData.msg+'</p>', {type:'success',delay: 3000,allow_dismiss: true,offset: {from: 'top', amount: 20}});
+								  }
+								  else
+								  {
+									  $.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>'+responseData.msg+'</p>', {type:'danger',delay: 3000,allow_dismiss: true,offset: {from: 'top', amount: 20}});
+								  }
+								  var oTable = $('#table_page_desc').dataTable( );
+								  oTable.api().ajax.reload(null, false);
+							  }
+						  });
+						 }
+						else
+						{
+							return false;
+						}
+					}
+				);
+			}
+			else
+			{
+				swal({
+						 title:"Please Select Record",
+						 type:"warning",
+              			 timer: 1500
+           			 });
+			return false;
+			}
+}
+// <!-- End: page_desc Multi delete  -->

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Mdrc 1.2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M26TV87');</script>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- End Google Tag Manager -->
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-left: 10px;
+            transform: translateY(5px);
+            width: 20px;
+            height: 20px;
+            border: 1px solid #333;
+            padding: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        .accent-color {
+            transform: scale(1.5);
+        }
+
+        .accent-blue {
+            accent-color: #1D7FBB;
+        }
+
+        .accent-green {
+            accent-color: #14935F;
+        }
+
+        .w-50 {
+            width: 15rem;
+        }
+        .h-35{
+            height: 8.5rem;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26TV87" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Heder section -->
+
+    <div
+        class="w-screen flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 py-0 overflow-x-hidden bg-white  sticky top-0 z-50">
+        <div class="mb-4 sm:mb-0">
+            <img src="./Image/logo.svg" alt="logo" class="w-32 sm:w-40 md:w-48 lg:w-56 max-w-full h-22 object-contain">
+        </div>
+        <div class="flex sm:gap-10 items-center">
+            <img src="./Image/certi1.png" alt="39" class="">
+            <img src="./Image/certi2.png" alt="39" class="">
+            <img src="./Image/image 34.png" alt="39" class="w-16 h-16 sm:w-20 sm:h-20 object-cover">
+        </div>
+    </div>
+    <div class="w-screen flex md:flex-row flex-col justify-center ">
+        <!-- Banner Section -->
+
+        <div class="relative w-full lg:w-full md:w-1/2">
+            <!-- Carousel Inner (images) -->
+            <div class="flex w-full h-full">
+                <!-- Slide 1 -->
+                <div class="w-full">
+                    <img src="./Image/niramaya 1.2_banner.png" alt="Banner 1" class="w-full h-full object-fill">
+                </div>
+                <!-- Carousel Wrapper -->
+                <!-- Slide 2 -->
+                <!-- <div class="carousel-item w-full flex-shrink-0">
+        <img src="./Image/niramaya 1.3 new size (2).jpg" alt="Banner 2" class="w-full h-full object-cover">
+      </div> -->
+                <!-- Slide 3 -->
+                <!-- <div class="carousel-item w-full flex-shrink-0">
+        <img src="./Image//niramaya 1.4 new size.jpg" alt="Banner 3" class="w-full h-full object-cover">
+      </div> -->
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div id="bookingForm" class="w-full md:w-1/2 bg-[#F5F5DC] flex flex-col justify-between py-10">
+            <div>
+                <!-- Title and Discounted Price Section -->
+                <div class="bg-[#E22128] text-white flex justify-center items-center py-2 px-10 text-center">
+                    <div class="font-semibold md:text-2xl text-lg">Modern Niramaya 1.2</div>
+                </div>
+                <!-- Test Parameters Section -->
+                <div class="group md:space-y-4 space-y-2 md:px-10 px-2 mt-3">
+                    <input type="checkbox" id="toggle" class="hidden peer">
+                    <label for="toggle"
+                        class="w-full py-1 text-left text-[#565353] text-lg font-semibold cursor-pointer">
+                        Parameters 84 Tests Included
+                    </label>
+                </div>
+            </div>
+
+            <!-- Form Title -->
+            <h2 class="text-center text-[#565353] font-bold md:text-xl text-base mb-4">Book Your Test</h2>
+
+            <!-- Form Inputs -->
+            <form class="md:space-y-4 space-y-2 md:px-10 px-2" id="testForm">
+                <input type="text" name="full_name" id="full_name" placeholder="*Full Name"
+                    class="w-full text-[#565353] px-4 py-2 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-100 required bg-transparent">
+                <input type="text" minlength="10" maxlength="10" name="mobile" id="mobile" placeholder="*Mobile Number"
+                    class="w-full text-[#565353] px-4 py-2 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-100 required bg-transparent number">
+                <input type="text" name="city" id="city" placeholder="*Enter City"
+                    class="w-full text-[#565353] px-4 py-2 border border-black rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-100 required bg-transparent">
+                <input type="hidden" name="package_name" value="Niramaya 1.2">
+                <!-- WhatsApp Opt-in Checkbox -->
+                <div class="flex items-center space-x-2 md:px-0">
+                    <input type="checkbox" id="whatsapp-opt-in"
+                        class="form-checkbox text-green-500 accent-blue accent-color" checked>
+                    <label for="whatsapp-opt-in" class="text-sm flex items-center" aria-checked="true">
+                        <a href="https://wa.me/918586988847" target="_blank" class="flex items-center space-x-2">
+                            <img src="Image/whatsapp.png" alt="whatsapp" class="h-5 w-5">
+                            <span class="md:text-lg text-base font-normal text-[#565353]">Opt-in for WhatsApp
+                                updates</span>
+                        </a>
+                    </label>
+                </div>
+                <div class="flex items-center space-x-2 md:px-0 px-0">
+                    <!-- Privacy Checkbox -->
+                    <input type="checkbox" id="privacy-policy" class="form-checkbox accent-green accent-color" checked>
+                    <label for="privacy-policy" class="text-sm text-[#565353]">
+                        You hereby affirm & authorise MDRC India to process the personal data as per the Privacy Policy.
+                    </label>
+                </div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAAbKtvxHo9oxETke"></div>
+                <!-- Submit Button -->
+                <div class="flex justify-center items-center">
+                    <button type="submit"
+                        class="w-fit py-1 sm:px-10 px-5 bg-gradient-to-l from-[#14935F] to-[#14935F] text-white font-bold rounded-lg hover:bg-blue-600 testFormSubmit">
+                        SUBMIT
+                    </button>
+                </div>
+                <div class="fieldsets row">
+                    <div class="col-md-12">
+                        <div id="prescription_booking_error_msg">
+                        </div>
+                    </div>
+                </div>
+                <!-- Disclaimer -->
+                <p class="text-center text-xs text-gray-500 mt-2">*Prices are subject to change as per city</p>
+                <p class="text-center text-xs text-gray-500 mt-2">*Offer valid on home collection</p>
+            </form>
+        </div>
+        <div id="popup" class="modal-backdrop">
+            <div class="modal-content">
+                <button onclick="closePopup()" class="close-button">&times;</button>
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 class="modal-title" id="successPopup">Success!</h3>
+                <p>Thank you! Our expert will get back to you soon.</p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- Icons Section -->
+    <div
+        class="w-screen bg-white md:flex hidden flex-wrap justify-center items-center  sm:gap-10 gap-3 py-8 sm:px-4   px-0 overflow-x-hidden">
+        <!-- Icon 1 -->
+        <div class="flex flex-col p-4 h-35 border  shadow-xl border-[#A4E5FF] rounded-md w-50 items-center">
+            <img src="./Image/clipboard.png" alt="Get Reports" class="w-12 h-12 mb-2 ">
+            <p class=" text-[#8A8383] font-medium sm:text-base text-sm text-center">Get Reports on WhatsApp in 15 hours*
+            </p>
+        </div>
+        <!-- Icon 2 -->
+        <div class="flex flex-col p-4  h-35 border rounded-md w-50 shadow-xl border-[#A4E5FF] items-center">
+            <img src="./Image/bike.png" alt="Free Home Sample" class="w-12 h-12 mb-2 ">
+            <p class=" text-[#8A8383] font-medium sm:text-base text-sm text-center">Home Sample Collection*<br>
+            </p>
+        </div>
+        <!-- Icon 3 -->
+        <div class="flex flex-col  p-4 h-35 border rounded-md w-50 shadow-xl border-[#A4E5FF] items-center">
+            <img src="./Image/clock-cal.png" alt="Fasting Required" class="w-12 h-12 mb-2 ">
+            <p class=" text-[#8A8383] font-medium sm:text-base text-sm text-center">Fasting required for<br> 12 hours</p>
+        </div>
+        <div class="flex flex-col p-4 h-35 border rounded-md w-50  shadow-xl border-[#A4E5FF] items-center">
+            <img src="./Image/acc.png" alt="NABL Accreditation" class="w-12 h-12 mb-2  object-contain">
+            <p class=" text-[#8A8383] font-medium sm:text-base text-sm text-center"> Fast and Accurate Report</p>
+        </div>
+        <!-- Icon 4 -->
+        <!-- <div class="flex flex-col  p-4 h-35 border rounded-md w-50 shadow-xl border-[#A4E5FF]">
+            <img src="./Image/certi2.png" alt="NABH Accreditation" class="w-12 h-12 mb-2  object-contain">
+            <p class=" text-[#8A8383] font-medium sm:text-base text-sm"> Accreditations NABH</p>
+        </div> -->
+        <!-- Icon 5 -->
+    </div>
+    <!-- Test Details Section -->
+
+    <section
+        class="bg-[#14935F] text-white md:py-12 py-4 w-full flex justify-center items-center overflow-x-hidden sm:px-0 px-2">
+        <div class="max-w-6xl sm:px-0 px-10">
+            <h2 class="md:text-3xl xs:text-2xl text-lg font-bold text-center md:mb-8 mb-3">TEST DETAILS</h2>
+            <div class="grid md:grid-cols-3 sm:gap-8 gap-3">
+                <div class="border border-white rounded-br-xl  p-4">
+                    <!-- <h3 class="sfont-medium mb-4 sm:text-lg text-base">Get your Obesity Screening test done with MODERN Obesity Screening Package to start Your journey</h3> -->
+                    <ul class="list-disc pl-5">
+                        <li>Lipid Profile
+                        </li>
+                        <li>
+
+                            Liver Function Test (LFT)
+                        </li>
+                        <li>
+
+                            CBC (Complete Blood Count)</li>
+                        <li>Kidney Function Test (KFT)</li>
+                    </ul>
+                </div>
+                <div class="border border-white rounded-br-xl  p-4">
+                    <!-- <h3 class="font-medium mb-4 sm:text-lg text-base">Get your Obesity Screening test done with MODERN Obesity Screening Package to start Your journey</h3> -->
+                    <ul class="list-disc pl-5">
+                        <li>Serum Iron Levels</li>
+                        <li>Vitamin B-12
+                        </li>
+                        <li>Vitamin D - 25 Hydroxy
+                        </li>
+                        <li>HBA1C (Hemoglobin A1c )</li>
+                    </ul>
+                </div>
+                <div class="border border-white rounded-br-xl  p-4">
+                    <!-- <h3 class="font-medium mb-4 sm:text-lg text-base">Get your Obesity Screening test done with MODERN Obesity Screening Package to start Your journey</h3> -->
+                    <ul class="list-disc pl-5">
+                        <li>Urine R/M (Urine Routine & Microscopy)
+                        </li>
+                        <li>Thyroid Profile - T3, T4, TSH
+                        </li>
+                        <li>Plasma Glucose - Fasting</li>
+                        <li>Immunoglobulin IgE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- other details -->
+
+
+    <div class="w-screen flex flex-col justify-center items-center md:px-4 px-2 sm:py-8 py-3 hidden">
+        <h2 class="lg:text-5xl sm:text-3xl xs:text-2xl text-2xl font-bold mb-6 text-[#565353] text-center">
+            Diwali Special Packages
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-6 gap-3">
+            <!-- Modern Fit India Package Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                onclick="document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });">
+                <div class="bg-[#1160A5] sm:text-xl text-base font-bold text-white sm:p-5 p-2">
+                    Modern Fit India Package
+                </div>
+                <div class="p-4">
+                    <p class="text-[#565353] text-base mb-2">Total no. of Tests: 40</p>
+                    <a href="#" class="text-[#1160A5] font-normal text-sm hover:underline mb-3 inline-block">Know
+                        More</a>
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="line-through text-[#8A8383] text-base">₹499</span>
+                            <span class="text-xl font-extrabold text-[#565353]">₹399</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-gradient-to-r from-[#1160A5] to-[#189ED3] text-white px-4 py-1 text-base font-extrabold rounded hover:bg-blue-700">BOOK</button>
+                        <button class="bg-red-500 text-white p-1 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Niramaya 1.1 Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                onclick="document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });">
+                <div class="bg-[#1160A5] text-white sm:text-xl text-base sm:p-5 p-2 font-bold">
+                    Modern Niramaya 1.1
+                </div>
+                <div class="p-4">
+                    <p class="text-[#565353] text-base mb-2">Total no. of Tests: 61</p>
+                    <a href="#" class="text-[#1160A5] font-normal text-sm hover:underline mb-3 inline-block">Know
+                        More</a>
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="line-through text-[#8A8383] text-base">₹1199</span>
+                            <span class="text-xl font-extrabold text-[#565353]">₹599</span>
+                        </div>
+                        <span class="bg-green-50 text-[#1D7FBB] text-xs font-semibold px-2 py-1 rounded">50% OFF</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-gradient-to-r from-[#1160A5] to-[#189ED3] text-white px-4 py-1 text-base font-extrabold rounded hover:bg-blue-700">BOOK</button>
+                        <button class="bg-red-500 text-white p-1 rounded ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Niramaya 1.3 Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                onclick="document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });">
+                <div class="bg-[#1160A5] sm:text-xl text-base text-white sm:p-5 p-2 font-bold">
+                    Modern Niramaya 1.3
+                </div>
+                <div class="p-4">
+                    <p class="text-[#565353] text-base mb-2">Total no. of Tests: 93</p>
+                    <a href="#" class="text-[#1160A5] font-normal text-sm hover:underline mb-3 inline-block">Know
+                        More</a>
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="line-through text-[#8A8383] text-base">₹4600</span>
+                            <span class="text-xl font-extrabold text-[#565353]">₹2300</span>
+                        </div>
+                        <span class="bg-green-50 text-[#1D7FBB] text-xs font-semibold px-2 py-1 rounded">50% OFF</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-gradient-to-r from-[#1160A5] to-[#189ED3] text-white px-4 py-1 text-base font-extrabold rounded hover:bg-blue-700">BOOK</button>
+                        <button class="bg-red-500 text-white p-1 rounded ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Niramaya 1.4 Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                onclick="document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });">
+                <div class="bg-[#1160A5] sm:text-xl text-base text-white sm:p-5 p-2 font-bold">
+                    Modern Niramaya 1.4
+                </div>
+                <div class="p-4">
+                    <p class="text-[#565353] text-base mb-2">Total no. of Tests: 94</p>
+                    <a href="#" class="text-[#1160A5] font-normal text-sm hover:underline mb-3 inline-block">Know
+                        More</a>
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="line-through text-[#8A8383] text-base">₹5100</span>
+                            <span class="text-xl font-extrabold text-[#565353]">₹2550</span>
+                        </div>
+                        <span class="bg-green-50 text-[#1D7FBB] text-xs font-semibold px-2 py-1 rounded">50% OFF</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button
+                            class="bg-gradient-to-r from-[#1160A5] to-[#189ED3] text-white px-4 py-1 text-base font-extrabold rounded hover:bg-blue-700">BOOK</button>
+                        <button class="bg-red-500 text-white p-1 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- why chhose us section -->
+    <div class="w-screen flex  bg-[#E4FFF4] flex-col justify-center items-center md:px-4 px-0 sm:py-16 py-5">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#055346] md:mb-14 xs:mb-5 mb-5">Why
+            choose us</h2>
+        <div class="max-w-6xl flex flex-wrap justify-evenly lg:gap-10 sm:gap-8 gap-2 items-center">
+            <div class="flex flex-col justify-center items-center">
+                <img src="./Image//whychhose-icon (4).png" alt="whychhose" class="lg:w-25 lg:h-25 object-contain pb-4">
+                <div class="text-[#055346] font-semibold  md:text-2xl xs:text-xl text-base text-center">4 Decades of
+                    Experience</div>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <img src="./Image//whychhose-icon (3).png" alt="whychhose" class="lg:w-25 lg:h-25 pb-4 object-contain">
+                <div class="text-[#055346] font-semibold  md:text-2xl xs:text-xl text-base text-center">Quality
+                    Assurance</div>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <img src="./Image//whychhose-icon (2).png" alt="whychhose" class="lg:w-25 lg:h-25 pb-4 object-contain">
+                <div class="text-[#055346] font-semibold  md:text-2xl xs:text-xl text-base text-center">More Than 5cr+
+                    Tests Done</div>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <img src="./Image//whychhose-icon (1).png" alt="whychhose" class="lg:w-25 lg:h-25 object-contain pb-4">
+                <div class="text-[#055346] font-semibold  md:text-2xl xs:text-xl text-base text-center">Led by Top
+                    Doctors</div>
+            </div>
+        </div>
+    </div>
+    <!-- //Our Review Section -->
+    <section class="w-screen flex justify-center items-center lg:py-12 sm:py-6 xs:py-6 py-5 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#565353] md:mb-8 xs:mb-5 mb-5">Our
+                Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review Card 1 -->
+                <div class="bg-[#189ED3] rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img class="h-12 w-12 rounded-full object-cover mr-4" src="./Image/rohit-vermsa.jpeg"
+                                alt="Lalit Kumar">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Rohit Verma</h3>
+                                <!-- <p class="text-sm text-white">Chief Executive Officer</p> -->
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="text-white mb-4">Visited the center in May 2024 and found it to be very convenient.
+                            Staff was very professional and courteous.</p>
+                    </div>
+                </div>
+                <!-- Review Card 2 -->
+                <div class="bg-[#189ED3]  rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img class="h-12 w-12 rounded-full object-cover mr-4" src="./Image/urvashi.jpeg"
+                                alt="Lalit Kumar">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Urvashi</h3>
+                                <!-- <p class="text-sm text-white">Chief Executive Officer</p> -->
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="mb-4 text-white">This diagnostic centre offers one of the best services at a great
+                            price. The staff made us feel comfortable throughout the procedure.</p>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="bg-[#189ED3]  rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img class="h-12 w-12 rounded-full object-cover mr-4" src="./Image/animesh.jpeg"
+                                alt="Lalit Kumar">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Animesh Kumar</h3>
+                                <!-- <p class="text-sm text-white">Chief Executive Officer</p> -->
+                            </div>
+                        </div>
+                        <div class="flex mb-2">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="text-white mb-4">Great experience with this lab. Well behaved staff, hygienic
+                            premises, Smooth Billing, Testing and Reporting. Prices of all tests are very reasonable
+                            too.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- //Chat  -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-center items-center bg-[#DEFFF2] p-4 rounded-lg">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center w-full p-3">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <h3 class="text-[#1160A5] text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
+                            Can't find your Test?
+                        </h3>
+                        <h4 class="text-[#565353] font-semibold text-xl">
+                            Connect with our Health Experts!
+                        </h4>
+                    </div>
+                    <a href="https://wa.me/918586988847" target="_blank" class="block">
+                        <div class="flex  items-center justify-center bg-[#249535] rounded-lg cursor-pointer px-5">
+                            <button
+                                class="text-white font-bold sm:text-3xl text-xl  hover:bg-[#1c7e2c] transition-colors duration-300 py-2 text-center">
+                                Chat Now
+                            </button>
+                            <div class="w-16 h-16 flex justify-center items-center">
+                                <img src="./Image/social_13051765 1 (2).png" alt="whatsapp" class="max-w-full h-auto">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <section class="bg-[#E6F8FF] py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Text Content -->
+                <div class="mb-8 lg:mb-0 lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold  text-[#565353] md:mb-8 xs:mb-4 mb-2">
+                        Streamline Your Test Booking: Download Our App Today!
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Download our app, made just for you! It's Easy, Convenient to do Test Booking!
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.mdrcindia.booking" target="_blank"
+                            class="inline-block">
+                            <img src="./Image/android.png" alt="Get it on Google Play" class="object-contain">
+                        </a>
+                        <a href="https://apps.apple.com/us/app/modern-diagnostic-health-app/id6504657715"
+                            target="_blank" class="inline-block">
+                            <img src="./Image/apple.png" alt="Download on the App Store" class="object-contain">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- App Screenshots -->
+                <div class="lg:w-1/2 flex justify-center items-end">
+                    <img src="./Image/mdrc-site.png" alt="App Screenshot 1" class="">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <div class="bg-[#F6F5F5] flex justify-center items-center py-6 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between md:items-center items-start space-y-4 md:space-y-0">
+                    <!-- Logo and Description -->
+                    <div class="flex flex-col items-center md:items-start space-y-2 md:w-1/2 lg:w-1/3">
+                        <img src="./Image/logo.svg" alt="Modern Diagnostic & Research Centre" class="h-12 w-auto" />
+                        <p class="text-[#565353] font-normal sm:text-lg text-md">
+                            Modern Diagnostic & Research Centre Pvt. Ltd. Is one of India's Fastest growing Diagnostic chain
+                            having more than 1800+ collection point across India and a network of 20+ Labs across 7 states.
+                        </p>
+                    </div>
+                    <!-- Contact Information -->
+                    <div class="flex flex-col md:flex-row md:items-center items-start md:gap-20 gap-5">
+                        <div class="flex  space-x-2 text-[#565353]">
+                            <i class="fa-solid fa-phone-volume sm:text-2xl text-lg mt-1"></i>
+                            <div>
+                                <h5 class="font-semibold sm:text-2xl text-lg m-0">Customer Care Number </h5>
+                                <a href="tel:++918586988847"
+                                    class="text-[#565353] font-bold sm:text-2xl text-lg hover:underline">+91-8586988847</a>
+                            </div>
+
+                        </div>
+                        <div class="flex space-x-2 text-[#565353]">
+                            <i class="fa-solid fa-envelope sm:text-2xl text-lg mt-1"></i>
+                            <div>
+                                <h5 class="font-semibold sm:text-2xl text-lg m-0">Email Id </h5>
+
+                                <a href="mailto:care@mdrcindia.com"
+                                    class="text-[#565353] font-bold sm:text-2xl text-lg hover:underline ">care@mdrcindia.com</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+        </div>
+         <!-- Copyright -->
+         <div class="py-6 text-center text-[#565353] sm:text-sm bg-white w-full">
+            ©2024 All rights reserved. Modern Diagnostic & Research Centre Pvt. Ltd.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/jquery.validate.min.js"></script>
+    <script>
+        $(document).on("click", ".testFormSubmit", function () {
+            $.validator.addMethod("alphabetOnly", function (value, element) {
+                return this.optional(element) || /^[A-Za-z\s]+$/.test(value);
+            }, "Only alphabets allowed.");
+            $('#testForm').validate({
+                rules:
+                {
+                    full_name: {
+                        required: true,
+                    },
+                    mobile: {
+                        required: true,
+                    },
+                    city: {
+                        required: true,
+                        alphabetOnly: true
+                    }
+                },
+                messages: {
+                    city: {
+                        required: "Please enter the city.",
+                        alphabetOnly: "Please enter only alphabets."
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    // Custom error placement in specific label
+                    var elementId = element.attr("id");
+                    $(`#${elementId}-error`).html(error).toggle();
+                },
+                submitHandler: function (form) {
+                    $(".testFormSubmit").attr("disabled", true);
+                    var dataString = new FormData(form);
+                    dataString.append('method', 'testBooking');
+                    $.ajax({
+                        dataType: 'html',
+                        type: "POST",
+                        url: "../../scripts/ajax/index.php",
+                        data: dataString,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (responseData) {
+
+                            $(".testFormSubmit").attr("disabled", false);
+                            if (responseData == 0) {
+                                $('#popup').addClass('active');
+                                $('#prescription_booking_error_msg').html('<h5 class="text-center">Thank you for Test Booking Enquiry ! </h5>');
+                                $('#testForm')[0].reset();
+                            }
+                            else {
+                                $('#prescription_booking_error_msg').html('<h5 class="text-center" style="color: #f00 !important;">Refresh page and try again.</h5>');
+                            }
+                        },
+                        error: function (responseData) {
+                            console.log('Ajax request not recieved!');
+                        }
+                    });
+                    return false;
+                }
+            });
+        });
+    </script>
+<script>
+    function refreshTurnstile() {
+      turnstile.reset('.cf-turnstile');
+      console.log('captcha regenerate.');
+    }
+    // Refresh the Turnstile token every 2 minutes (120000 milliseconds)
+    setInterval(refreshTurnstile, 120000);
+  </script>
+</body>
+
+</html>

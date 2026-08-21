@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteBase /niramaya-1.2
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ https://www.mdrcindia.com/niramaya-1.2/$1/ [R=301,L]

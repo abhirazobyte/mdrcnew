@@ -1,0 +1,503 @@
+.custom-form .input-box label.cust {
+    margin-bottom: 4px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+    color: #222;
+    font-size: 16px;
+}
+
+.custom-form .input-box .custom-file .custom-file-label {
+    font-size: 13px;
+    display: block;
+    text-align: left;
+}
+
+.input-box input[type="radio"]:checked:after {
+    border: 1px solid #0a6baf !important;
+}
+
+.input-box input[type="radio"]:before {
+    background: #0a6baf !important;
+}
+
+.input-box input[type="radio"]:after {
+    border: 1px solid #0a6baf !important;
+}
+
+.radio-booktest input {
+    margin-bottom: 4px !important;
+}
+
+.account-profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.account-profile-img img {
+    border-radius: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.textbookingfrm.custom-form .form-control:focus {
+    background-color: white;
+}
+
+.location-city-section .search-name {
+    text-align: left;
+}
+
+/* alert */
+.sweet-alert h2 {
+    margin-bottom: 20px;
+}
+
+.sweet-alert p.lead {
+    font-size: 18px;
+}
+
+/* Serch box */
+.ui-widget.ui-widget-content {
+    width: 93% !important;
+}
+
+.ui-menu .ui-menu-item-wrapper .labelPackage {
+    color: #000;
+    background: #efef03;
+    padding: 4px 11px;
+    border-radius: 3px;
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+}
+
+.ui-menu-item-wrapper {
+    padding: 8px 10px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sweet-alert button.cancel {
+    background-color: #0a6baf;
+    margin-right: 15px;
+}
+
+.sweet-alert button {
+    font-size: 18px;
+}
+
+.show-reuslt-bg {
+    background-color: #0a6baf;
+}
+
+
+input.error {
+    border-color: red !important;
+}
+
+.alert-error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.checkout-section .accordion .accordion-item .accordion-header {
+
+    padding: 10px !important;
+}
+
+.checkout-section .accordion-collapse {
+    padding: 10px !important;
+}
+
+.checkout-section .tab-heading {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* pay-btn */
+.checkout-bottom {
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    background: white;
+}
+
+@media only screen and (min-width: 767px) {
+    .checkout-bottom {
+        max-width: 600px;
+    }
+}
+
+.checkout-section .order_total_calculation td {
+    text-align: right;
+}
+
+.checkout-section .order_total_calculation th,
+.checkout-section .order_total_calculation td {
+    padding: 6px 0;
+}
+
+.checkout-section .order_total_calculation .tpayable th,
+.checkout-section .order_total_calculation .tpayable .prc {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.checkout-section .order_total_calculation .tpayable {
+    border-bottom: transparent;
+}
+
+.checkout-section .container {
+    padding: 0 !important;
+}
+
+.checkout-section .accordion .accordion-item .accordion-button {
+    display: flex;
+    align-items: start;
+}
+
+.header .logo-wrap a {
+    font-size: 13px !important;
+}
+
+/* datepicker */
+.datepicker.dropdown-menu {
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+    padding: 12px 10px;
+}
+
+.datepicker td,
+.datepicker th {
+    padding: 6px;
+}
+
+.header-sidebar .navigation {
+    margin-bottom: 15px;
+}
+
+.header-sidebar .wrap {
+    height: 100% !important;
+}
+
+.header-sidebar .navigation ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+/* chekcbox */
+
+.add-patient .custom-radio label .adri {
+    background: #fff;
+    box-shadow: 0 0 4px rgb(148 148 148 / 30%);
+    line-height: 1.5;
+    padding: 11px 18px;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.add-patient .custom-radio input {
+    top: 3px;
+    line-height: 17px;
+}
+
+.custom-control.custom-radio input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    top: 2px;
+    position: absolute;
+    top: 4px;
+    left: -25px;
+    padding: 0;
+    border: 1px solid #7f7f7f !important;
+    border-radius: 2px;
+    font-weight: bold;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+}
+
+.add-patient .custom-control-label svg {
+    top: 5.2px;
+    left: -24px;
+}
+
+.custom-control-label svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+    position: absolute;
+    top: 5.2px;
+    left: 0px;
+    display: none;
+}
+
+.custom-control.custom-radio input:checked:before {
+    content: '';
+    background: #1161a5;
+    color: #fff;
+    height: 15px;
+    top: 0;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "Brandon Grotesque Regular", Verdana, sans-serif;
+}
+
+.custom-control-label input:checked+svg {
+    display: block;
+}
+
+.custom-control.custom-radio {
+    position: relative;
+}
+
+/* chekcbox */
+
+.popup-modals .closes {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.popup-modals .infosmal p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.masonary-gallery-mdrc .popupimg img {
+    width: 100%;
+}
+
+.masonary-gallery-mdrc a.popupimg {
+    margin-top: 11px;
+    display: block;
+    border: 1px solid gainsboro;
+}
+
+.header-sidebar.show {
+    z-index: 99999 !important;
+}
+
+.offcanvas.show {
+    z-index: 999999 !important;
+}
+
+/* coupon card */
+.coup-p.ft i {
+    top: 12px;
+    left: 0;
+    font-size: 22px;
+    position: absolute;
+    font-size: 15px;
+}
+
+.coup-p {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.4;
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+.check-apply-coupon .bdr {
+    border-top: 2px solid #f4f4f5;
+    border-bottom: 2px solid #f4f4f5;
+}
+
+.check-apply-coupon .check-coupon {
+    color: #0f5ba1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    border: none;
+    background: none;
+    padding: 0;
+    width: auto;
+}
+
+.check-apply-coupon .custom-control-label svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+    position: absolute;
+    top: 6px !important;
+    left: -28px !important;
+    display: none;
+}
+
+.check-apply-coupon .custom-control.custom-radio input {
+    left: -30px !important;
+}
+
+.check-apply-coupon .custom-control-label input:checked+svg {
+    display: block;
+}
+
+.check-apply-coupon .c-bdr {
+    border: 1.5px dashed #000;
+    padding: 10px 20px
+}
+
+.check-apply-coupon .wallet-check {
+    margin-left: 10px;
+}
+
+.promo_success .coup-p>a {
+    color: #dc3545;
+}
+
+.promo_success .coup-p {
+    margin-bottom: 0;
+}
+
+.promo_success .coup-p.ft i {
+    top: 7px;
+}
+
+
+/* siderbar */
+.header-sidebar .navigation ul li {
+    position: relative;
+    display: block !important;
+}
+
+.header-sidebar .navigation ul li .nav-link {
+    padding: 3px 0;
+}
+
+.header-sidebar .user-panel {
+    margin-bottom: 0;
+}
+
+ul.siderbar-submenu {
+    margin-left: 15px;
+    background: white;
+    display: none;
+    margin-top: 10px;
+}
+
+.arrow-rotate {
+    transform: rotate(90deg);
+}
+
+.header-sidebar .navigation ul li:not(:first-of-type) {
+    margin-top: 0;
+}
+
+.health-package-details-page h3.font-lg {
+    color: #0a6baf;
+}
+
+.header-sidebar .navigation ul li:first-child {
+    margin-top: 8px;
+}
+
+.checkout-section .nav_link_icon {
+    display: inline-block;
+    color: #fff;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 13px;
+    margin-bottom: 5px;
+    z-index: 2;
+    position: relative;
+    background: #0a6baf;
+    justify-content: center;
+}
+
+.checkout-section .accordion .accordion-item .accordion-button {
+    color: #0a6baf;
+}
+
+.moreless-button[aria-expanded="true"]>.rmore {
+    display: none;
+}
+
+.moreless-button[aria-expanded="false"]>.rless {
+    display: none;
+}
+
+/* header sticky */
+@media only screen and (min-width: 767px) {
+    .header {
+        max-width: 600px;
+        width: 600px;
+    }
+}
+
+/* cart alert */
+
+.alert-box .cartMemberRemove .fa-times-circle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    font-size: 16px;
+    transform: translateY(-50%);
+}
+
+/* marque */
+
+.pathology-radiology-1 .Marquee-content {
+    display: flex;
+    animation: marquee 25s linear infinite running !important;
+}
+.pathology-radiology-1 .Marquee-content:hover {
+    animation-play-state: paused !important;
+}
+
+.radiology.active .Marquee-tag.categoryClick.click {
+    background-color: #ffd9dc !important;
+    color: #dc3545 !important;
+    white-space: nowrap;
+  }
+  
+.CartItems p {
+    /* padding: 0 30px; */
+}
+
+/* taost */
+
+.toast-position-top-right {
+    position: fixed;
+    top: 55px !important;
+    right: 15px !important;
+}
+.toast-item-close{
+    background-image: url('https://www.mdrcindia.com/m/assets/images/mdrc/icons/close.svg') !important;
+    top: 15px !important;
+    width: 15px !important;
+    height: 15px !important;
+    background-position: center !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+}
+.toast-item{
+    padding: 10px 15px;
+}

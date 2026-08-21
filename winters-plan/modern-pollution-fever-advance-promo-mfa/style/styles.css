@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  font-family: 'Roboto';
+  margin: 30px;
+}
+
+/* Container to center image */
+.img-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Image */
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

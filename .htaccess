@@ -1,0 +1,194 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} .+/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+ErrorDocument 404 https://www.mdrcindia.com/404
+ErrorDocument 403 /index.php?view=404
+
+RewriteCond %{REQUEST_URI} ^/api/ [NC] 
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/webApi/ [NC] 
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/uploads/ [NC] 
+RewriteRule ^ - [L]
+
+# # Detect mobile devices
+# RewriteCond %{HTTP_USER_AGENT} "android|iphone|ipad|ipod|mobile" [NC]
+# RewriteRule ^$ http://localhost:3000/ [P,L]
+
+# RewriteCond %{HTTP_USER_AGENT} "android|iphone|ipad|ipod|mobile" [NC]
+# RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
+
+
+RewriteCond %{REQUEST_URI} ^/niramaya-1.2/full-body-checkup/health-package-1350/(.*)$
+RewriteRule ^niramaya-1.2/full-body-checkup/health-package-1350/(.*)$ /$1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} ^/modern-osteoporosis/package/(.*)$ [NC]
+RewriteRule ^modern-osteoporosis/package/(.*)$ /$1 [L,R=301]
+
+
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [L,R=301] 
+
+
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+# Disable .htaccess in this path
+RewriteCond %{REQUEST_FILENAME} -f [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -d [NC,OR]
+RewriteCond %{REQUEST_FILENAME} -l [NC]
+RewriteRule .* - [L]
+RewriteRule .*\.(gif|jpg|png|php)$ - [F]
+IndexIgnore *
+Options All -Indexes
+RewriteRule 404$ index.php?view=404
+RewriteRule search index.php?view=search
+
+
+RewriteRule ^blog/?$ index.php?view=blog
+RewriteRule ^about-us/?$ index.php?view=about_us
+RewriteRule ^corporate-tieup/?$ index.php?view=corporate_tieup
+RewriteRule ^ipo/?$ index.php?view=ipo
+RewriteRule ^policies/?$ index.php?view=policies
+RewriteRule ^news-releases/?$ index.php?view=news_releases
+RewriteRule ^mdrc-test-booking-enquiry/?$ index.php?view=test_booking_enquiry
+RewriteRule ^mdrc-test-booking-enquiry-new/?$ index.php?view=test_booking_enquiry_new
+RewriteRule covid-19 index.php?view=covid_19
+RewriteRule career index.php?view=career
+RewriteRule cart index.php?view=cart
+RewriteRule checkout$ index.php?view=checkout
+RewriteRule checkout1$ index.php?view=checkout1
+RewriteRule reach-us/?$ index.php?view=contact_us
+
+RewriteRule gallery$ index.php?view=gallery
+RewriteRule help-support$ index.php?view=help_support
+
+RewriteRule health-risk/?([^/]*)/?$ index.php?view=health_risk&city=$1 [L,QSA]
+
+
+## RewriteRule ^home-collection$ index.php?view=home_collection
+## RewriteRule ^home-sample-collection/([^/]*)/?$ index.php?view=home_sample_collection&citySlug=$1 [L]
+
+RewriteRule labs/?([^/]*)?/?$ index.php?view=home&city=$1 [L,QSA]
+
+
+RewriteRule ^diseases/([^/]*)/?([^/]*)/?([^/]*)?$ index.php?view=diseases&city=$1&slug=$2&area=$3 [L,QSA]
+RewriteRule ^category/([^/]*)/?([^/]*)/?([^/]*)?$ index.php?view=category&city=$1&slug=$2&area=$3 [L,QSA]
+
+
+RewriteRule ^premium-health-checkup/?$ index.php?view=premium_health_checkup [L,QSA]
+#RewriteRule ^premium-health-checkup/([^/]*)$ index.php?view=premium_health_checkup&city=$1 [L,QSA]
+RewriteRule ^premium-health-checkup/([^/]*)/?$ index.php?view=premium_health_checkup&city=$1 [L,QSA]
+
+RewriteRule imaging-test-information index.php?view=imaging_test_information
+RewriteRule pathology-lab-information$ index.php?view=pathology_lab_information
+#RewriteRule tests-by-conditions.html index.php?view=tests_by_conditions
+RewriteRule ^pregnancy-care$ index.php?view=pregnancy_care
+RewriteRule ^therapeutic-drug-monitoring$ index.php?view=tdm
+RewriteRule ^oncology$ index.php?view=oncology
+RewriteRule my-addresses index.php?view=my_addresses
+RewriteRule my-family-friends index.php?view=my_family_friends
+RewriteRule my-orders index.php?view=my_orders
+RewriteRule my-prescription index.php?view=my_prescription
+RewriteRule my-profile index.php?view=my_profile
+RewriteRule my-wallet index.php?view=my_wallet
+RewriteRule our-doctors$ index.php?view=our_doctors
+
+RewriteRule ^our-doctors/detail/([^/]*)$ index.php?view=doctor_details&doctor_slug=$1 [L,QSA]
+
+RewriteRule ^download-reports index.php?view=download_reports
+
+#RewriteCond %{THE_REQUEST} /payment-process
+RewriteRule ^payment-process$ index.php?view=payment_process [L,QSA,END]
+
+RewriteRule ^payment-failed$ index.php?view=payment_failed [L,QSA,END]
+RewriteRule ^payment-success$ index.php?view=payment_success [L,QSA,END]
+RewriteRule ^pay$ index.php?view=pay [L,NC,END]
+RewriteRule ^checkout_process/([^/]*)/?$ index.php?view=checkout_process&paymentID=$1 [L,NC,END]
+
+#RewriteCond %{THE_REQUEST} /paynow-payment-process
+RewriteRule ^paynow-payment-process$ index.php?view=paynow_payment_process [L,NC]
+
+RewriteRule ^paynow-payment-failed$ index.php?view=paynow_payment_failed [L,QSA,NC,END]
+RewriteRule ^paynow-payment-success$ index.php?view=paynow_payment_success [L,QSA,NC,END]
+RewriteRule ^paynow$ index.php?view=paynow [L,NC,END]
+
+RewriteRule radiology/?$ index.php?view=radiology
+RewriteRule ^radiology/([^/]*)/?$ index.php?view=radiology&desc=$1 [L]
+RewriteRule radiology/([^/]*)/([^/]*)/?([^/]*)?$ index.php?view=radiology&desc=$1&city=$2&area=$3 [L]
+
+RewriteRule ^pathology/?$ index.php?view=pathology
+RewriteRule ^pathology/([^/]*)/?$ index.php?view=pathology&desc=$1 [L]
+RewriteRule ^pathology/([^/]*)/([^/]*)/?([^/]*)?$ index.php?view=pathology&desc=$1&city=$2&area=$3 [L]
+
+RewriteRule video index.php?view=video_gallery
+RewriteRule gallery index.php?view=prok
+RewriteRule logout index.php?view=logout
+
+RewriteRule ^page/([^/]*)$ index.php?view=page&page_id=$1 [L]
+
+#RewriteRule ^detail/([^/]*)$ index.php?view=detail&slug=$1 [L]
+
+RewriteRule ^tests/([^/]*)/?([^/]*)/?$ index.php?view=detail&slug=$1&city=$2 [L]
+
+RewriteRule ^order-details/([^/]*)$ index.php?view=order_details&id=$1 [L]
+RewriteRule ^blog/category/([^/]*)/?$ index.php?view=blog&category_slug=$1 [L,QSA]
+RewriteRule ^blog/tag/([^/]*)/?$ index.php?view=blog&tag_slug=$1 [L,QSA]
+RewriteRule ^blog/detail/([^/]*)/?$ index.php?view=blog_details&blog_slug=$1 [L,QSA]
+
+RewriteRule ^category/([^/]*)/([^/]*)$ index.php?view=category&city=$1&ser=$2 [L]
+
+#RewriteRule ^service/([^/]*)\.html$ index.php?view=service_details&slug=$1 [L]
+RewriteRule ^service/([^/]*)/([^/]*)$ index.php?view=service_details&parent=$1&slug=$2 [L]
+
+RewriteRule news-and-events/?$ index.php?view=news_and_events
+RewriteRule ^news-and-events/category/([^/]*) index.php?view=news_and_events&category_slug=$1 [L,QSA]
+RewriteRule ^news-and-events/detail/([^/]*) index.php?view=news_and_events_details&event_slug=$1 [L,QSA]
+
+RewriteRule my-account/?$ index.php?view=my_account
+
+RewriteRule ^our-milestones/?$ index.php?view=our_milestones
+
+RewriteRule ^popular-packages/?([^/]*)/?$ index.php?view=popular_packages&city=$1 [L]
+RewriteRule ^popular-tests/?([^/]*)/?$ index.php?view=popular_tests&city=$1 [L]
+RewriteRule ^categories/?([^/]*)/?$ index.php?view=categories&city=$1 [L]
+RewriteRule ^home-sample-collection/?([^/]*)?$ index.php?view=home_sample_collection&city=$1 [L]
+
+RewriteRule ^modern-fit-india/full-body-checkup/health-package-499$ /niramaya-1.1/full-body-checkup/health-package-599/modern-fit.html [L]
+
+RewriteRule ^for-doctors/([^/]*)$ index.php?view=for_doctors&slug=$1 [L,QSA]
+
+RewriteRule ^([faq/]*)/([^/]*)$ index.php?view=$1&slug=$2 [L,QSA]
+
+#RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?view=radiology&city=$1&page=$2&service=$3 [L,QSA]
+
+
+
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
+# Deny access to git metadata
+RedirectMatch 404 /\.git

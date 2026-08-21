@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteBase /modern
+
+RewriteRule ^fever-panel-screen/?$ fever-screen.html
+RewriteRule ^fever-panel-basic/?$ fever-panel-basic.html
+RewriteRule ^fever-panel-advance/?$ fever-panel.html
+RewriteRule ^fever-panel-extended/?$ fever-panel-extended.html
+
+RewriteRule ^women-health-package/?$ women-health-package.php
+

@@ -1,0 +1,49 @@
+<?php
+$cartID=$app->getGetVar('id');
+$obj_model_tmp_cartmini = $app->load_model("customer_order_detail");
+$rs_data = $obj_model_tmp_cartmini->execute("SELECT", false,"", "customer_order_detail.id='".$cartID."'");
+$image=$rs_data[0]['prescription_data'];
+
+	if($image!='' &&  file_exists('/home/mdrcindia.com/html/uploads/prescription/'.$image))
+	 {
+		$img=IMAGE_SERVER_ROOT.'/uploads/prescription/'.$image;		
+	 }else	 {
+		 $img=IMAGE_SERVER_ROOT.'/uploads/default.png';
+	 }
+?>
+<!-- <div class="popup-modals modal-ad-style">
+  <div class="modal infosmal" id="modal-UploadPrescription-details" tabindex="-1" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="common-heading">
+            <h4 class="mt0 mb0">Prescription</h4>
+          </div>
+          <button type="button" class="closes" data-bs-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+        	<div class="col-lg-12 text-center col-12">
+        			<img class="w-100" src="<?=$img?>" alt="">
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="offcanvas offcanvas-bottom common-popup" tabindex="-1" id="orderPrescriptionImg" aria-labelledby="orderPrescriptionImg">
+	<div class="offcanvas-header">
+		<div class="d-flex align-items-center justify-content-between w-100">
+			<div class="d-flex align-items-center">
+				<a href="#"><i data-feather="chevron-left"></i></a>
+				<h2 class="fw-bold font-md ms-2">Prescription</h2>
+			</div>
+		
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+	</div>
+	<div class="offcanvas-body small">
+    <img class="w-100" src="<?=$img?>" alt="">
+	</div>
+</div>

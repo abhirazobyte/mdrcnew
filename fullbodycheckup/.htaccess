@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteBase /fullbodycheckup
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ https://www.mdrcindia.com/fullbodycheckup/$1/ [R=301,L]

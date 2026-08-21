@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /download-reports
+Disallow: /cart
+Disallow: /search
+Disallow: /login
+Disallow: /signup
+Disallow: /registration
+
+Sitemap: https://www.mdrcindia.com/sitemap.xml

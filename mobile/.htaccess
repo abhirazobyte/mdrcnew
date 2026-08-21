@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /mobile/
+RewriteRule index.html index.php
+RewriteRule ^about-us index.php

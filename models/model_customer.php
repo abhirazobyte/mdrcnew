@@ -1,0 +1,77 @@
+<?php
+	class model_customer{
+		public $fields= array();
+		public $nullable= array();
+		public $default_value= array();
+		public $ID= 0;
+		public $KEY= "";
+
+		function model_customer($ID=0){
+			$this->ID = $ID;
+			$this->KEY = "id";
+			$this->fields["id"]="int(11)";
+			$this->nullable["id"]="NO";
+			$this->default_value["id"]="";
+			$this->fields["name"]="varchar(100)";
+			$this->nullable["name"]="NO";
+			$this->default_value["name"]="";
+			$this->fields["last_name"]="varchar(100)";
+			$this->nullable["last_name"]="NO";
+			$this->default_value["last_name"]="";
+			$this->fields["gender"]="enum('Male','Female','Other')";
+			$this->nullable["gender"]="NO";
+			$this->default_value["gender"]="Male";
+			$this->fields["email"]="varchar(100)";
+			$this->nullable["email"]="NO";
+			$this->default_value["email"]="";
+			$this->fields["phone"]="varchar(100)";
+			$this->nullable["phone"]="NO";
+			$this->default_value["phone"]="";
+			$this->fields["image"]="varchar(100)";
+			$this->nullable["image"]="NO";
+			$this->default_value["image"]="";
+			$this->fields["fcm_token"]="varchar(255)";
+			$this->nullable["fcm_token"]="NO";
+			$this->default_value["fcm_token"]="";
+			$this->fields["device_id"]="varchar(100)";
+			$this->nullable["device_id"]="NO";
+			$this->default_value["device_id"]="";
+			$this->fields["otp_verified"]="enum('Yes','No')";
+			$this->nullable["otp_verified"]="NO";
+			$this->default_value["otp_verified"]="No";
+			$this->fields["wallet"]="float(9,2)";
+			$this->nullable["wallet"]="NO";
+			$this->default_value["wallet"]="";
+			$this->fields["promoWallet"]="float(9,2)";
+			$this->nullable["promoWallet"]="NO";
+			$this->default_value["promoWallet"]="";
+			$this->fields["ref_key"]="varchar(100)";
+			$this->nullable["ref_key"]="NO";
+			$this->default_value["ref_key"]="";
+			$this->fields["referral_from"]="varchar(100)";
+			$this->nullable["referral_from"]="NO";
+			$this->default_value["referral_from"]="";
+			$this->fields["referral_complate"]="enum('No','Yes','None')";
+			$this->nullable["referral_complate"]="NO";
+			$this->default_value["referral_complate"]="None";
+			$this->fields["register_from"]="enum('Android','Iphone','Web','Admin','Store')";
+			$this->nullable["register_from"]="NO";
+			$this->default_value["register_from"]="Android";
+			$this->fields["api_token"]="varchar(255)";
+			$this->nullable["api_token"]="NO";
+			$this->default_value["api_token"]="";
+			$this->fields["status"]="enum('Active','Inactive','Trash','Blocked')";
+			$this->nullable["status"]="NO";
+			$this->default_value["status"]="Active";
+			$this->fields["register_date"]="varchar(100)";
+			$this->nullable["register_date"]="NO";
+			$this->default_value["register_date"]="";
+			$this->fields["entry_date_time"]="varchar(100)";
+			$this->nullable["entry_date_time"]="NO";
+			$this->default_value["entry_date_time"]="";
+			$this->fields["ip"]="varchar(100)";
+			$this->nullable["ip"]="NO";
+			$this->default_value["ip"]="";
+		}
+	}
+?>

@@ -1,0 +1,35 @@
+# Large user/media content (GBs)
+uploads/
+**/uploads/
+Uploads/
+**/Uploads/
+
+# Runtime / generated
+cache/
+**/cache/
+logs/
+**/logs/
+temp/
+**/temp/
+tmp/
+**/tmp/
+*.log
+
+# Archives / backups
+*.tar.gz
+*.zip
+*.rar
+*.sql
+*.sql.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Local env / secrets variants (keep main config; ignore local overrides)
+.env.local
+.env.*.local
+fcm/service_account.json
+fcm/service_account.json
