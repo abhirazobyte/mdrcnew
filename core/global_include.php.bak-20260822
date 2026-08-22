@@ -113,16 +113,21 @@ class global_include
 				$new_url=str_replace("http://","",$new_url);
 				$new_url=str_replace("www.","",$new_url);
 				$new_url=str_replace("WWW.","",$new_url);
-				if (
-					(!isset($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) != 'on') &&
-					(!isset($_SERVER['HTTP_X_FORWARDED_PROTO']) || strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) != 'https')
-				){
-					$this->app->redirect("https://".$new_url);
+				if($page_name=='index.html' || $page_name=='index.php'){
+					$this->app->redirect("https://www.".$new_url);
+				}
+				if (strpos($url, "http://")!==false){
+					$this->app->redirect("https://www.".$new_url);
+				}
+				
+				if (strpos($url, "www")!==false){}
+				else{
+					$this->app->redirect("https://www.".$new_url);
 				}
 
 				if($_SESSION['cityID']=='' && $this->app->getGetVar("city")!='')
 				{
-					setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","server.razobyte.com",true); 
+					setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","mdrcindia.com",true); 
 					$obj_model_tble=$this->app->load_model("city");
 					$rs_city = $obj_model_tble->execute("SELECT",false,"","slug='".$this->app->getGetVar("city")."' and status='Active'","");
 					if(count($rs_city)>0)
@@ -149,7 +154,7 @@ class global_include
 				{
 					if($_SESSION['citySlug']!=$this->app->getGetVar("city"))
 					{
-						setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","server.razobyte.com",true); 
+						setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","mdrcindia.com",true); 
 						$obj_model_tble=$this->app->load_model("city");
 						$rs_city = $obj_model_tble->execute("SELECT",false,"","slug='".$this->app->getGetVar("city")."' and status='Active'","");
 						if(count($rs_city)>0)
@@ -326,18 +331,26 @@ class global_include
 				$new_url=str_replace("http://","",$new_url);
 				$new_url=str_replace("www.","",$new_url);
 				$new_url=str_replace("WWW.","",$new_url);
-				if (
-					(!isset($_SERVER['HTTPS']) || strtolower($_SERVER['HTTPS']) != 'on') &&
-					(!isset($_SERVER['HTTP_X_FORWARDED_PROTO']) || strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) != 'https')
-				)
+				if($page_name=='index.html' || $page_name=='index.php' || $page_name=='index.php/')
 				{
-					$this->app->redirect("https://".$new_url);
+					$this->app->redirect("https://www.".$new_url);
+				}
+				if (strpos($url, "http://")!==false)
+				{
+					$this->app->redirect("https://www.".$new_url);
+				}
+				if (strpos($url, "www")!==false)
+				{
+				}
+				else
+				{
+					$this->app->redirect("https://www.".$new_url);
 				}
 
 				//------------
 				if($_SESSION['cityID']=='' && $this->app->getGetVar("city")!='')
 				{
-					setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","server.razobyte.com",true); 
+					setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","mdrcindia.com",true); 
 					$obj_model_tble=$this->app->load_model("city");
 					$rs_city = $obj_model_tble->execute("SELECT",false,"","slug='".$this->app->getGetVar("city")."' and status='Active'","");
 					if(count($rs_city)>0)
@@ -374,7 +387,7 @@ class global_include
 				{
 					if($_SESSION['citySlug']!=$this->app->getGetVar("city"))
 					{
-						setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","server.razobyte.com",true); 
+						setcookie("MDRCCitySelect", "Yes", time() + 2 * 24 * 60 * 60,"/","mdrcindia.com",true); 
 						$obj_model_tble=$this->app->load_model("city");
 						$rs_city = $obj_model_tble->execute("SELECT",false,"","slug='".$this->app->getGetVar("city")."' and status='Active'","");
 						if(count($rs_city)>0)
