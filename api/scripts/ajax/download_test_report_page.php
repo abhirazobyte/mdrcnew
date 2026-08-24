@@ -26,7 +26,7 @@ if($visitor_id!='' && $lab_password!='')
         'Content-Type: application/x-www-form-urlencoded'
       ),
     ));
-    $response = curl_exec($curl);
+    $response = mdrc_curl_exec($curl);
     
     curl_close($curl);
     
@@ -73,7 +73,7 @@ if($visitor_id!='' && $lab_password!='')
         if($report_ready)
         {
             //$URL="http://182.156.200.228/mdrcnew/Design/Lab/labreportnew.aspx?page=new&reportid=".$visitor_id."_".$lab_password;
-            $URL="https://lis6.mdrcindia.com/mdrcnew/Design/Lab/labreportnew.aspx?page=new&reportid=".$visitor_id."_".$lab_password;
+            $URL="?page=new&reportid=".$visitor_id."_".$lab_password;
             $table_html.='<a href="'.$URL.'" class="btn w-100 btn-solid lnk btn-main bg-btn" target="_blank">Download Report <span class="circle"></span></a>';
         } else { 
             $table_html.='<a href="javascript:void(0)" class="btn w-100 btn-solid lnk btn-main bg-btn">Report is not Ready<span class="circle"></span></a>';
@@ -126,7 +126,7 @@ if($visitor_id!='' && $lab_password!='')
 
             $RESULT='OK';
             $MSG='Please check report.';
-            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"https://lis6.mdrcindia.com/mdrcnew/Design/Lab/labreportnew.aspx?page=new&reportid=".$visitor_id."_".$lab_password,"button_html"=>$button_html,"table_html"=>$table_html));
+            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"?page=new&reportid=".$visitor_id."_".$lab_password,"button_html"=>$button_html,"table_html"=>$table_html));
             exit;
         }
         else
@@ -150,7 +150,7 @@ if($visitor_id!='' && $lab_password!='')
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_HTTPHEADER =>array('Content-Length: 0')
         ));
-        $response = curl_exec($curl);
+        $response = mdrc_curl_exec($curl);
 
         $api_response=$response?json_decode($response,true):[];
 

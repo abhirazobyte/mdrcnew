@@ -141,7 +141,7 @@ class _test_booking_inquiry extends controller
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$response = curl_exec($ch);
+			$response = mdrc_curl_exec($ch);
 			$response = json_decode($response, true);
 			//print_r($response);exit;
 			curl_close($ch);
@@ -172,7 +172,7 @@ class _test_booking_inquiry extends controller
 			"Authorization: token {$apiKey}:{$apiSecret}"
 			]);
 
-			$response = curl_exec($ch);
+			$response = mdrc_curl_exec($ch);
 			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			curl_close($ch);
 

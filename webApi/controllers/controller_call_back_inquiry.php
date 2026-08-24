@@ -47,7 +47,7 @@ class _call_back_inquiry extends controller
 				//call api for add data in crm
 				$obj_model_phone = $this->app->load_model('get_call_back');
 				$checkPhone = $obj_model_phone->execute("SELECT", false, "", "phone='" . $phone . "'");
-				if (count($checkPhone) <= 0) {
+				if (count($checkPhone) <= 0 && !(function_exists('mdrc_external_api_removed') && mdrc_external_api_removed())) {
 					require_once('../ripcord-master/ripcord.php');
 
 					$url = CRM_URL;

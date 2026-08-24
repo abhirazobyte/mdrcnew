@@ -26,7 +26,7 @@ if($visitor_id!='' && $lab_password!='')
         'Content-Type: application/x-www-form-urlencoded'
       ),
     ));
-    $response = curl_exec($curl);
+    $response = mdrc_curl_exec($curl);
     curl_close($curl);
     
     $api_response=$response?json_decode($response,true):[];
@@ -56,7 +56,7 @@ if($visitor_id!='' && $lab_password!='')
 
             $RESULT='OK';
             $MSG='Please check report.';
-            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"https://lis6.mdrcindia.com/mdrcnew/Design/Lab/labreportnew.aspx?reportid=".$visitor_id."_".$lab_password));
+            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"?reportid=".$visitor_id."_".$lab_password));
             exit;
         }
         else
@@ -80,7 +80,7 @@ if($visitor_id!='' && $lab_password!='')
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_HTTPHEADER =>array('Content-Length: 0')
         ));
-        $response = curl_exec($curl);
+        $response = mdrc_curl_exec($curl);
 
         $api_response=$response?json_decode($response,true):[];
 

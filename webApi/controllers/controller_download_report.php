@@ -34,7 +34,7 @@ class _download_report extends controller
                 ],
             ]);
 
-            $response = curl_exec($curl);
+            $response = mdrc_curl_exec($curl);
             curl_close($curl);
 
             $api_response = $response ? json_decode($response, true) : [];

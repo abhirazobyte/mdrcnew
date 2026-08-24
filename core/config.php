@@ -43,10 +43,12 @@
 	{
 		define("CACHE_TIME", 60);
 	}
-	define("API_URL", "http://3.109.103.148/");
-	define("LIS_API_URL", "https://lis6.mdrcindia.com/mdrcnew/api"); 
+	require_once(dirname(__FILE__)."/external_api_removed.php");
 
-	define("CRM_URL", "http://crm.mdrcindia.com:8069"); 
+	define("API_URL", "");
+	define("LIS_API_URL", ""); 
+
+	define("CRM_URL", ""); 
 	define("CRM_DB", "MDRC"); 
 	define("CRM_EMAIL", "leadscrm@mdrcindia.com"); 
 	define("CRM_PASSWORD", "Crm@infonoble363"); 
@@ -150,7 +152,7 @@
 	define("CCA_CANCEL_URL", "https://www.mdrcindia.com/payment-process");
 	define("M_CCA_RETURN_URL", "https://www.mdrcindia.com/payment-process");
 	define("M_CCA_CANCEL_URL", "https://www.mdrcindia.com/payment-process");
-	define("CCA_URL", "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction");
+	define("CCA_URL", "");
 	/*=======================================================*/
 
 
@@ -188,23 +190,23 @@
             //define("ENC_KEY", "1234567890123456");
 			define("ENC_KEY", "1234567890123456");
     }
-	define("CRM_ACCESS_ID", 'u$rc2f00ef6fe1d0fb266468766c80938f6');
-	define("CRM_SECRET_KEY", "25ebf5a0fce5340a762c92064065b41cdfb35e41");
+	define("CRM_ACCESS_ID", '');
+	define("CRM_SECRET_KEY", "");
 
 	/** Frappe method URL: no API secrets in query string—only path. Auth: Authorization: token api_key:api_secret */
-	define("FRAPPE_WEBSITE_ENQUIRY_URL", "https://crm.mdrcindia.net/api/method/crm.integrations.website.webhooks.ingest_website_enquiry");
+	define("FRAPPE_WEBSITE_ENQUIRY_URL", "");
 	// Legacy: shared secret (body field auth_token or e.g. ?auth_token=) — not used; keep commented if you need to re-enable
 	// define("FRAPPE_WEBSITE_ENQUIRY_AUTH_TOKEN", "FXBTaq5oHv7dzJKC6Wfig2xOxwMpoDxw7mOQEj");
 	/** Frappe user API key + secret (User → API Access). Sent as: Authorization: token key:secret */
-	define("FRAPPE_WEBSITE_INTEGRATION_API_KEY", "2236b2f73d1cb2b");
-	define("FRAPPE_WEBSITE_INTEGRATION_API_SECRET", "a7a99e414903e5d");
+	define("FRAPPE_WEBSITE_INTEGRATION_API_KEY", "");
+	define("FRAPPE_WEBSITE_INTEGRATION_API_SECRET", "");
 	/** Sent to Frappe as form field "source" for routing / reporting */
 	define("FRAPPE_ENQUIRY_SOURCE_TEST_BOOKING", "test_booking_enquiry");
 	define("FRAPPE_ENQUIRY_SOURCE_COLLECTION", "collection_appointment");
 	define("FRAPPE_ENQUIRY_SOURCE_CORPORATE", "corporate_tieup_enquiry");
 
-	define("RAZOR_PAY_KEY", 'rzp_live_SXp7NrguqIFLLC');
-	define("RAZOR_PAY_SECRET", "bACqM1TrjZpTx8xAOkcTiAMX");
+	define("RAZOR_PAY_KEY", '');
+	define("RAZOR_PAY_SECRET", "");
 
     /*=======================================================*/
 

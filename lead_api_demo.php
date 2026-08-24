@@ -23,7 +23,7 @@
 // // Receive server response ...
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// $response = curl_exec($ch);
+// $response = mdrc_curl_exec($ch);
 
 // if ($response === false) {
 //     echo " (Error Code: " . curl_errno($ch) . ")";
@@ -54,7 +54,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
   "Authorization: token {$apiKey}:{$apiSecret}"
 ]);
 
-$response = curl_exec($ch);
+$response = mdrc_curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if (curl_errno($ch)) {
@@ -90,7 +90,7 @@ curl_setopt_array($curl, array(
   ),
 ));
 
-$response = curl_exec($curl);
+$response = mdrc_curl_exec($curl);
 
 curl_close($curl);
 echo $response;
@@ -123,7 +123,7 @@ exit;
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
    
 
-    $response1 = curl_exec($ch);
+    $response1 = mdrc_curl_exec($ch);
     print_r(json_decode($response1,true)); exit;
     if ($response1 === false) {
      

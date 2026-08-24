@@ -57,7 +57,7 @@ $date="2025-07-28";
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
     curl_setopt($ch, CURLOPT_POST, true);
-    $response = curl_exec($ch);
+    $response = mdrc_curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     if (curl_errno($ch)) {
         echo 'Curl error: ' . curl_error($ch);

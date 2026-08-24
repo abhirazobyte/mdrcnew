@@ -69,7 +69,7 @@ class _collection_appointment_inq extends controller{
 			"Authorization: token {$apiKey}:{$apiSecret}"
 			]);
 
-			$response = curl_exec($ch);
+			$response = mdrc_curl_exec($ch);
 			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 			curl_close($ch);

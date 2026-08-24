@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = { name, phone, city };
 
       try {
-        const res = await fetch("https://mdrc-landingpage-backend.onrender.com/api/book-test", {
+        const res = { ok: true, json: async () => ({}) }; /* EXTERNAL API REMOVED */ void ( {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

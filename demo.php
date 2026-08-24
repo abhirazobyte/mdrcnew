@@ -75,7 +75,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 ]);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($paymentParams));
 
-$response = curl_exec($ch);
+$response = mdrc_curl_exec($ch);
 echo $response;exit;
 $base64=base64_decode('PGh0bWw+PGJvZHk+PGZvcm0gbmFtZT0icGF5bWVudF9wb3N0IiBpZD0icGF5bWVudF9wb3N0IiBhY3Rpb249Imh0dHBzOi8vYXBpLnBheXUuaW4vcHVibGljLyMvMTIwZTI1YjQ1MGY2NDNlMzEwMzc3YmQ4OWU5Y2ZlNWQvcXJMb2FkZXI\/bW9iaWxlQ2hlY2tvdXQ9MCIgbWV0aG9kPSJnZXQiPjwvZm9ybT48c2NyaXB0IHR5cGU9J3RleHQvamF2YXNjcmlwdCc+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aW5kb3cub25sb2FkPWZ1bmN0aW9uKCl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQuZm9ybXNbJ3BheW1lbnRfcG9zdCddLnN1Ym1pdCgpOwogICAgICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICA8L3NjcmlwdD48L2JvZHk+PC9odG1sPg==');
 echo $base64;exit;

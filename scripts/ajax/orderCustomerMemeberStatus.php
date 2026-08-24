@@ -62,7 +62,7 @@ if($orderID!='' && $orderCustomerMemeberID!='')
         'Content-Type: application/x-www-form-urlencoded'
       ),
     ));
-    $response = curl_exec($curl);
+    $response = mdrc_curl_exec($curl);
     curl_close($curl);
     
     $api_response=$response?json_decode($response,true):[];
@@ -189,7 +189,7 @@ if($orderID!='' && $orderCustomerMemeberID!='')
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_HTTPHEADER =>array('Content-Length: 0')
         ));
-        $response = curl_exec($curl);
+        $response = mdrc_curl_exec($curl);
 
         $api_response=$response?json_decode($response,true):[];
 

@@ -71,7 +71,7 @@
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($data));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($ch);
+		$response = mdrc_curl_exec($ch);
 		$response=json_decode($response,true);
 		curl_close($ch);
 		}
@@ -124,7 +124,7 @@
 		}
 		curl_setopt_array($chFrappe, $frappeCurlOpts);
 
-		$frappeBody = curl_exec($chFrappe);
+		$frappeBody = mdrc_curl_exec($chFrappe);
 		$frappeHttp = (int) curl_getinfo($chFrappe, CURLINFO_HTTP_CODE);
 		$frappeErr = curl_error($chFrappe);
 		curl_close($chFrappe);

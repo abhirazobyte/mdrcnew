@@ -927,7 +927,7 @@
 
 
 			$tmpStr.="\n";
-			$tmpStr.='<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
+			// EXTERNAL API REMOVED: Cloudflare Turnstile
 			$tmpStr.="\n";
 			if(!empty($this->getMetaSchema())){
 				$tmpStr.="\n";

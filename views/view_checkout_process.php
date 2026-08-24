@@ -175,7 +175,7 @@ $data = [
 //print_r($data); exit;
 $json = json_encode($data);
 ?>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!-- EXTERNAL API REMOVED: Razorpay -->
 <form name='razorpayform' action="payment-process" method="POST">
 	<input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
 	<input type="hidden" name="razorpay_signature" id="razorpay_signature">

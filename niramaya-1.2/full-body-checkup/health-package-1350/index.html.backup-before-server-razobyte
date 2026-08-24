@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODERN NIRMAYA 1.2 | Modern Diagnostic </title>
+    <link rel="icon" type="image/ico" href="https://www.mdrcindia.com/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .success-icon {
+            width: 4rem;
+            height: 4rem;
+            background: #ebf7ee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .modal-title {
+            color: #374151;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align:center;
+        }
+        .success-icon svg {
+            width: 2rem;
+            height: 2rem;
+            color: #34d399;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M26TV87');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2118719105254874');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2118719105254874&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+   
+</head>
+<body>
+     <!-- Google Tag Manager (noscript) -->
+     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26TV87"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="assets/images/logo.png" class="img-fluid logo-img" alt="">
+            </a>
+            <div class="d-flex">
+                <img src="assets/images/nabl.png" class="img-fluid nabl-img" alt="">
+                <img src="assets/images/forty-years.png" class="img-fluid celebrate" alt="">
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main">
+        <div class="hero-section mb-5">
+            <div class="container-fluid no-padding">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <div class="mobile-banner-img">
+                            <img src="assets/images/mobile-banner.jpg" class="" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-top desktop">
+                            <img src="assets/images/main-test.png" class="img-fluid" alt="">
+                            <div class="test-para">
+                                <p>84 Parameters Tests Included</p>
+                            </div>
+                            <div class="mobile-form-top">
+                                <div class="form-top-cn-m">
+                                    <h3 class="text-center">MODERN NIRMAYA 1.2</h3>
+                                    <p class="text-center">84 Parameters Tests Included</p>
+                                </div>
+                            </div>
+                            <!-- <img src="assets/images/discount.png" class="img-fluid discount-img" alt=""> -->
+                        </div>
+                        <div class="mobile form-top-mobile">
+                            <div class="d-flex form-top-mobile-content">
+                                <h3 class="text-center">MODERN NIRMAYA 1.2</h3>
+                                <p class="text-center">84 Parameters Tests Included</p>
+                            </div>
+                            <div class="discount-img d-none">
+                                <img src="assets/images/discount.png" class="img-fluid discount-img" alt="">
+                            </div>
+                        </div>
+                        <div class="form-style">
+                            <div class="test-list-container mb-3">
+                                <p class="test-list">
+                                  Lipid Profile | LFT | KFT | Serum Iron Level | Urine R/M
+                                </p>
+                                <hr class="default-hr">
+                                <p class="test-list">
+                                  Thyroid Profile | IgE | Vitamin D-25 | HbA1c
+                                </p>
+                            </div>
+                            <form method="post" class="leadsquareForm" id="leadsquareForm">
+                                <div class="mb-2 input-group has-validation">
+                                    <input type="text" class="form-input-style form-control" name="fullName" id="exampleFormControlInput1" placeholder="*Full Name" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid name.
+                                    </div>
+                                </div>
+                                <div class="mb-2 input-group has-validation">
+                                    <input type="text" class="form-input-style form-control" name="mobile" id="exampleFormControlInput1" placeholder="*Mobile Number" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid mobile number.
+                                    </div>
+                                </div>
+                                <div class="mb-2 input-group has-validation">
+                                    <select class="form-select form-input-style" name="city" id="cityName" required>
+                                        <option selected disabled value="">Choose City</option>
+                                        <option value="Gurgaon">Gurgaon</option>
+                                        <option value="Srinagar">Srinagar</option>
+                                        <option value="Yamunanagar">Yamunanagar</option>
+                                        <option value="Kurukshetra">Kurukshetra</option>
+                                        <option value="Kolkata">Kolkata</option>
+                                        <option value="Panipat">Panipat</option>
+                                        <option value="Bhiwadi">Bhiwadi</option>
+                                        <option value="Bareilly">Bareilly</option>
+                                        <option value="Amritsar">Amritsar</option>
+                                        <option value="Jaipur">Jaipur</option>
+                                        <option value="Gorakhpur">Gorakhpur</option>
+                                        <option value="Karnal">Karnal</option>
+                                        <option value="Indore">Indore</option>
+                                        <option value="Guwahati">Guwahati</option>
+                                        <option value="Jammu">Jammu</option>
+                                        <option value="Varanasi">Varanasi</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid city.w
+                                    </div>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked disabled>
+                                    <label class="form-check-label label-1" for="defaultCheck1">
+                                      Opt in for <img src="assets/images/whatsapp.png" alt="" style="margin-top: -4px;"> WhatsApp updates
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" checked disabled>
+                                    <label class="form-check-label label-2" for="defaultCheck1">
+                                      You hereby affirm & authorise MDRC India to process the personal data as per the Privacy Policy.
+                                    </label>
+                                </div>
+                                <button class="btn book-btn mx-auto d-block mb-3 leadsquareSubmit">BOOK YOUR TEST</button>
+                                <p class="mb-2 text-success messageDiv" style="display: none;text-align: center;">Thank you! Our expert will get back to you soon.</p>
+                                <div class="terms-text text-center">*Prices are subject to change as per city</div>
+                                <div class="terms-text text-center">*Offer valid on home collection only</div>
+                            </form>
+                        </div>
+                        <div class="modal fade" id="popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="d-flex justify-content-end">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="success-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="modal-title" id="successPopup">Success!</h3>
+                                        <p class="text-center">Thank you! Our expert will get back to you soon.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="banner-img" style="background-image: url('assets/images/hero-banner.jpg');">
+                            <!-- <img src="assets/images/hero-banner.png" class="img-fluid" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="test-details-section mb-5">
+            <div class="container">
+                <div class="section-title mb-3">
+                    <h5>Test Details</h5>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/lipid.png" alt="">
+                            <p>Lipid Profile</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/serum.png" alt="">
+                            <p>Serum Iron Levels</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/immuno.png" alt="">
+                            <p>Immunoglobulin IgE</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/lft.png" alt="">
+                            <p>Liver Function Test (LFT)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/urine.png" alt="">
+                            <p>Urine R/M (Urine Routine & Microscopy)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/vitamin.png" alt="">
+                            <p>Vitamin D - 25 Hydroxy</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/kft.png" alt="">
+                            <p>Kidney Function Test (KFT)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/thyroid.png" alt="">
+                            <p>Thyroid Profile - T3, T4, TSH</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="test-detail">
+                            <img src="assets/images/serum.png" alt="">
+                            <p>HbA1c (Hemoglobin A1c)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="choose-us-section mb-5">
+            <div class="container custom-container">
+                <div class="section-title mb-3">
+                    <h5>Why Choose us</h5>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/experience.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/quality.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/doctors.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/total-test.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/labs.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div class="choose-img">
+                            <img src="assets/images/touch-point.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="satisfy-c-section mb-5">
+            <div class="satisfied-customers-banner desktop">
+                <div class="left-section">
+                    <span class="stars">
+                        <img src="assets/images/stars.png" alt="">
+                    </span>
+                </div>
+                <div class="center-section c-satisfy">
+                    <div class="center-c">
+                        <span class="icon">
+                            <img src="assets/images/blue-thumb.png" class="img-blue" alt="">
+                            <img src="assets/images/thumps-up.png" class="img-white" alt="">
+                        </span>
+                        <span class="text">5 Crore+ Satisfied Customers</span>
+                    </div> 
+                </div>
+                <div class="right-section">
+                    <span class="stars right-stars">
+                        <img src="assets/images/stars.png" alt="">
+                    </span>
+                </div>
+            </div>
+            <div class="satify-customer-banner-m mobile">
+                <div class="msc">
+                    <div class="satify-text">
+                        <img src="assets/images/thumps-up.png" class="img-white" alt="">
+                        <h4 class="text-white">5 Crore+ Satisfied Customers</h4>
+                    </div>
+                </div>
+                <div class="m-stars">
+                    <img src="assets/images/stars.png" class="img-fluid mx-auto d-block" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div class="reviews-section mb-5">
+            <div class="container">
+                <div class="section-title mb-3">
+                    <h5>
+                        <span class="review-star">
+                            <img src="assets/images/star.png" alt="" style="width: 20px;">
+                        </span>
+                        Our Reviews
+                        <span class="review-star">
+                            <img src="assets/images/star.png" alt="" style="width: 20px;">
+                        </span>
+                    </h5>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <div class="review-card">
+                            <div class="user-header">
+                                <div class="avatar">
+                                    <img src="assets/images/user.png" alt="">
+                                </div>
+                                <p class="user-name">Rohit Verma</p>
+                            </div>
+                            <div class="stars-review">★★★★★</div>
+                            <p class="review-text">
+                                Visited the center in May 2024 and found it to be very convenient. Staff was professional and courteous
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="review-card">
+                            <div class="user-header">
+                                <div class="avatar">
+                                    <img src="assets/images/user.png" alt="">
+                                </div>
+                                <p class="user-name">Urvashi</p>
+                            </div>
+                            <div class="stars-review">★★★★★</div>
+                            <p class="review-text">
+                                The diagnostic center offers one of the best services are a greater price. The staff made us feel comfortable throughout the procedure.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="review-card">
+                            <div class="user-header">
+                                <div class="avatar">
+                                    <img src="assets/images/user.png" alt="">
+                                </div>
+                                <p class="user-name">Animesh Kumar</p>
+                            </div>
+                            <div class="stars-review">★★★★★</div>
+                            <p class="review-text">
+                                Great experience with this lab. Well behaved staff, hygenic premises, smooth billing, testing and reporting. Prices of all test are reasonable too.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="find-section mb-5">
+            <div class="center-section">
+                <div class="center-find">
+                    <span class="find">Can't Find Your Test?</span>
+                    <span class="connect"><img src="assets/images/whatsapp-2.png" alt="">Connect with our health experts!</span>
+                </div> 
+            </div>
+        </div>
+        
+        <div class="terms-section mb-5">
+            <div class="container">
+                <div class="terms-title mb-3">
+                    <h5>*Terms & Conditions:</h5>
+                </div>
+                <div class="row">
+                    <div class="col-g-12">
+                        <div class="faq-s">
+                            <ul>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        By submitting this form, you consent to being contacted by an MDRC representative and allow MDRC Health Advisors to call you back at your convenience.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        Our Health Advisor will guide you through the testing process, ensuring the diagnosis helps prevent potential diseases.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        Health vitals and history will be collected for pre-diagnosis purposes, and appropriate tests will be recommended, or you can share your prescription with our team.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        Upon confirming your booking, a trained Phlebotomist will visit your chosen location at the specified time to collect samples, with additional vitals taken if suggested during pre-diagnosis.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        Your sample will be safely transported to our nearest collection hub, and once processed, the results will be verified by our medical team.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        A detailed diagnostic report with interpretations will be provided to you.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        MDRC offers customer support from 7 AM to 8 PM to assist with any concerns during and after the diagnostic process.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="mb-3 faq-p">
+                                        By entering your phone number, you agree to receive text notifications, promotional offers, and health checkup reminders from MDRC, along with consent for communications.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>	
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="background-overlay"></div>
+        <div class="footer-section mb-3">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="footer-logo-c">
+                            <img src="assets/images/logo.png" class="img-fluid" alt="">
+                            <p class="footer-content">Modern Diagnostic & Research Center LTD. <br> 
+                                Is one of India's fastest growing diagnostic chain having <br> more than 1800+ collection point across India
+                                and <br> a network of 21+ labs across 8 states.  
+                            </p>
+                            <p class="mobil-f-c">
+                                Modern Diagnostic & Research Center LTD.
+                                Is one of India's fastest growing diagnostic chain having more than 1800+ collection point across India
+                                and a network of 21+ labs across 8 states.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row mt-3">
+                            <div class="col-lg-6 mb-3">
+                                <div class="contact-details">
+                                    <h5>Customer Care Number</h5>
+                                    <span><a href="tel:+918071680844" style="color: #6F7172;text-decoration: none;">+91-8071680844</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <div class="contact-details">
+                                    <h5>Email Id</h5>
+                                    <span><a href="mailto:care@mdrcindia.com" style="color: #6F7172;text-decoration: none;">care@mdrcindia.com</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="celebration-image">
+                                    <img src="assets/images/celebration.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rights-reserved-section mb-5">
+            <div class="container">
+                <p class="text-center reserved-text">
+                    ©2024 All rights reserved. Modern Diagnostic & Research Centre Ltd.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.mdrcindia.com/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.mdrcindia.com/js/jquery.validate.min.js"></script>
+    <script src="https://www.mdrcindia.com/scripts/js/script.js?v=1.6"></script>
+</body>
+</html>

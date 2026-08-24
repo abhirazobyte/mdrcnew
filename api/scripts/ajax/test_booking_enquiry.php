@@ -68,7 +68,7 @@
 			// 	),
 			// ));
 	
-			// $response1 = curl_exec($curl);
+			// $response1 = mdrc_curl_exec($curl);
 			// $response1=json_decode($response1,true);
 			// curl_close($ch);
 			$s3FilePath='';
@@ -141,7 +141,7 @@
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($data));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($ch);
+		$response = mdrc_curl_exec($ch);
 		$response=json_decode($response,true);
 		//print_r($response);exit;
 		curl_close($ch);
@@ -181,7 +181,7 @@
 		// 		),
 		// 	));
 	
-		// 	$response = curl_exec($curl);
+		// 	$response = mdrc_curl_exec($curl);
 		// 	curl_close($ch);
 		// };
 		echo "0";

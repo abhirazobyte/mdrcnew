@@ -55,7 +55,7 @@ class _order_tracking_details extends controller
 				CURLOPT_POSTFIELDS => 'WorkOrderID=' . $visitor_id,
 				CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded']
 			]);
-			$response = curl_exec($curl);
+			$response = mdrc_curl_exec($curl);
 			curl_close($curl);
 
 			$api_response = $response ? json_decode($response, true) : [];

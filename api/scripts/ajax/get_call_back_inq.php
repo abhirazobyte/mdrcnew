@@ -50,7 +50,7 @@ else
 }
 
 //call api for add data in crm
-if($RESULT=='1')
+if($RESULT=='1' && !(function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()))
 {
 	$obj_model_phone=$app->load_model('get_call_back');
 	$checkPhone=$obj_model_phone->execute("SELECT",false,"","phone='".$phone."'");

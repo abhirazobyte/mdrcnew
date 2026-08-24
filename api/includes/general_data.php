@@ -99,7 +99,7 @@ $(document).ready(function(){
 </script>
 <?php }?>
 
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyCx56a0ngffZltDpaIyCZQ06UJKRVXT6g4"></script>
+<!-- EXTERNAL API REMOVED: Google Maps -->
 <script>
 $(document).ready(function(){            
 	if ($.cookie('MDRCCitySelect')) { //if cookie isset

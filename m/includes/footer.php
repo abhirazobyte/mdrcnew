@@ -95,7 +95,7 @@ $pages = ['home', "my_profile", "my_account"];
 <script src="assets/js/alert/js/sweet-alert.min.js"></script>
 <script src="assets/js/alert/js/jquery.sweet-alert.init.js"></script>
 
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyCx56a0ngffZltDpaIyCZQ06UJKRVXT6g4"></script>
+<!-- EXTERNAL API REMOVED: Google Maps -->
 <script src="assets/js/map/google.js"></script>
 
 <script>

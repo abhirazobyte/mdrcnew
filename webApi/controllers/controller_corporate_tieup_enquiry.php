@@ -48,7 +48,7 @@ class _corporate_tieup_enquiry extends controller {
 				"Authorization: token {$apiKey}:{$apiSecret}"
 			]);
 
-			$response = curl_exec($ch);
+			$response = mdrc_curl_exec($ch);
 			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 			curl_close($ch);

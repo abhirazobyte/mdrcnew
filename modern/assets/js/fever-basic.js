@@ -1,7 +1,7 @@
 (() => {
     'use strict'
     
-    const API_URL = 'https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture';
+    const API_URL = ''; // EXTERNAL API REMOVED: LeadSquared
     const ACCESS_KEY = 'u$rc2f00ef6fe1d0fb266468766c80938f6';
     const SECRET_KEY = '25ebf5a0fce5340a762c92064065b41cdfb35e41';
     const COMPANY_ID = '82a19544-ef4f-4cef-a09c-d68b939742f9';
@@ -65,7 +65,7 @@
         try {
             console.log('Sending payload:', JSON.parse(payload));
             
-            const response = await fetch(url, {
+            const response = { ok: true, json: async () => ({ Status: "Success", Message: {} }) }; /* EXTERNAL API REMOVED: LeadSquared */ void ({
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

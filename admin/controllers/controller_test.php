@@ -29,7 +29,7 @@ class _test extends controller
 				'Content-Type: application/x-www-form-urlencoded'
 			),
 		));
-		$response = curl_exec($curl);
+		$response = mdrc_curl_exec($curl);
 		curl_close($curl);
 		$responseData=json_decode($response,true);
 				

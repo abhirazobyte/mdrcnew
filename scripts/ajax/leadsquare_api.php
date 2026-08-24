@@ -93,7 +93,7 @@ if ($fullName!='' && $mobile!='' && $city!='') {
 	]);
 	curl_setopt($ch, CURLOPT_POST, true);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-	$response = curl_exec($ch);
+	$response = mdrc_curl_exec($ch);
 	curl_close($ch);
 	
 	

@@ -10,7 +10,7 @@
 		curl_setopt($ch, CURLOPT_POST, 0);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,  false);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , false);
-		$content = curl_exec($ch);
+		$content = mdrc_curl_exec($ch);
 		curl_close($ch);
 	}else{
 		include("../../../core/app.php");

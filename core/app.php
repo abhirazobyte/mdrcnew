@@ -955,7 +955,7 @@ src=\"https://www.facebook.com/tr?id=2118719105254874&ev=PageView&noscript=1\"
 <!-- End Meta Pixel Code -->";
 
 			$tmpStr.="\n";
-			$tmpStr.='<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
+			// EXTERNAL API REMOVED: Cloudflare Turnstile
 			$tmpStr.="\n";
 			if(!empty($this->getMetaSchema())){
 				$tmpStr.="\n";

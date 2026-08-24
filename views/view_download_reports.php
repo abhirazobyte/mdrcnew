@@ -22,7 +22,7 @@
 					<p class="text-white f-normal fs-4">You can download your reports through the Visit ID and Password mentioned on your Booking Slip. </p>
 					<br /><br /><br />
 					<!--<a href="http://182.72.101.236/mdrcnew/design/onlinelab/" target="_new" class="text-white" style="text-decoration:underline">Click Here : Download Reports (For Client Only)</a>-->
-					<a href="https://lis6.mdrcindia.com/mdrcnew/design/OnlineLab/Default.aspx" target="_new" class="text-white" style="text-decoration:underline">Click Here : Download Reports (For Client Only)</a>
+					<a href="#" class="text-white" style="text-decoration:underline">Click Here : Download Reports (For Client Only)</a>
 
 				</div>
 				<div class="col-lg-5">

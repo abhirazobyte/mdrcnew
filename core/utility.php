@@ -18,6 +18,9 @@ class utility extends Singleton
 	}
 	function dataFromApi($url, $request_parameter)
 	{
+		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
+			return '';
+		}
 		$parameters = $request_parameter;
 		$url = API_URL . $url;
 		$ch = curl_init();
@@ -28,7 +31,7 @@ class utility extends Singleton
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE);
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
-		$response = curl_exec($ch);
+		$response = mdrc_curl_exec($ch);
 		//echo $response;
 		curl_close($ch);
 		//$result=json_decode($response, true);
@@ -2663,6 +2666,9 @@ class utility extends Singleton
 	}
 	function get_sms_balance()
 	{
+		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
+			return '';
+		}
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => "https://control.msg91.com/api/balance.php?authkey=368534AnUMuT68h4J6167e05cP1&type=4",
@@ -2675,7 +2681,7 @@ class utility extends Singleton
 			CURLOPT_SSL_VERIFYHOST => 0,
 			CURLOPT_SSL_VERIFYPEER => 0,
 		));
-		$response = curl_exec($curl);
+		$response = mdrc_curl_exec($curl);
 		$err = curl_error($curl);
 		curl_close($curl);
 		if ($err) {
@@ -2705,7 +2711,7 @@ class utility extends Singleton
 			$template_id = $rs_data[0]['template_id'];
 			$sms_text = $rs_data[0]['sms_text'];
 			$message_text = str_replace($default_string, $new_string, $sms_text);
-			if ($mb != '9510069163' && $mb != '1234567890') {
+			if ($mb != '9510069163' && $mb != '1234567890' && !(function_exists('mdrc_external_api_removed') && mdrc_external_api_removed())) {
 				$username = 'mdrcindia.com';
 				$password = '78917494';
 				$Header_Name = 'MDRCPL';
@@ -2713,7 +2719,7 @@ class utility extends Singleton
 				curl_setopt($ch, CURLOPT_POST, 1);
 				curl_setopt($ch, CURLOPT_POSTFIELDS, "username=" . $username . "&password=" . $password . "&source=" . $Header_Name . "&dmobile=91" . $mb . "&dlttempid=" . $template_id . "&message=" . $message_text);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				$data = curl_exec($ch);
+				$data = mdrc_curl_exec($ch);
 			}
 			$total_phone = count(explode(',', $mb));
 			$update_field = array();
@@ -3084,7 +3090,7 @@ class utility extends Singleton
 			// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			// curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
-			// $result = curl_exec($ch);
+			// $result = mdrc_curl_exec($ch);
 			// curl_close($ch);
 			$a = $a + 1000;
 		}
@@ -6109,6 +6115,9 @@ class utility extends Singleton
 	}
 	function getCloudFareCaptchaVerify($token = null)
 	{
+		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
+			return ["status" => 1, "message" => "verfied"];
+		}
 		$secretKey = '0x4AAAAAAAbKtpmPV8PzAw4pMOrmEkFlttQ';
 		if (empty($token)) {
 			//die('Turnstile verification failed: no token provided.');
@@ -6361,6 +6370,9 @@ class utility extends Singleton
 	}
 	function razorpay_create_order($field_list, $url)
 	{
+		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
+			return '';
+		}
 		$key = RAZOR_PAY_KEY;
 		$secret = RAZOR_PAY_SECRET;
 		$field_list = json_encode($field_list);
@@ -6372,7 +6384,7 @@ class utility extends Singleton
 		curl_setopt($ch, CURLOPT_USERPWD, $key . ':' . $secret);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array("content-type: application/json"));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = curl_exec($ch);
+		$response = mdrc_curl_exec($ch);
 		curl_close($ch);
 		$data = json_decode($response, true);
 		$razor_id = $data['id'];
@@ -6381,6 +6393,9 @@ class utility extends Singleton
 	}
 	function send_push_notifaction($data, $androidToken)
 	{
+		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
+			return;
+		}
 		$notifData = [
 			'title' => $data['title'] ?? '',
 			'body' => $data['message'] ?? '',
@@ -6417,7 +6432,7 @@ class utility extends Singleton
 		curl_setopt($ch, CURLOPT_HTTPHEADER, [
 			'Content-Type: application/x-www-form-urlencoded',
 		]);
-		$response = curl_exec($ch);
+		$response = mdrc_curl_exec($ch);
 		curl_close($ch);
 		$tokenResponse = json_decode($response, true);
 		if (!isset($tokenResponse['access_token'])) {
@@ -6446,7 +6461,7 @@ class utility extends Singleton
 				'Authorization: Bearer ' . $accessToken,
 				'Content-Type: application/json',
 			]);
-			$result = curl_exec($ch);
+			$result = mdrc_curl_exec($ch);
 			//echo $result;exit;
 			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			curl_close($ch);

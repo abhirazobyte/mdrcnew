@@ -182,7 +182,7 @@ if($actionType=="BookingAPINew")
 				curl_setopt($crl, CURLOPT_POST, true);
 				curl_setopt($crl, CURLOPT_POSTFIELDS, $post_data);
 				curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-				$rest = curl_exec($crl);
+				$rest = mdrc_curl_exec($crl);
 				$orderResponse=json_decode($rest,true);
 
 				if(!empty($rest) && !empty($orderResponse))

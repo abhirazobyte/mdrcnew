@@ -87,7 +87,7 @@
 		}
 		curl_setopt_array($chFrappe, $frappeCurlOpts);
 
-		$frappeBody = curl_exec($chFrappe);
+		$frappeBody = mdrc_curl_exec($chFrappe);
 		$frappeHttp = (int) curl_getinfo($chFrappe, CURLINFO_HTTP_CODE);
 		$frappeErr = curl_error($chFrappe);
 		curl_close($chFrappe);
