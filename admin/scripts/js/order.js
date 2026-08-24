@@ -165,7 +165,7 @@ $(document).on("click",".order_api_onclick", function ()
 						  type: "POST",
 						  dataType: 'json',
 						  url: "scripts/ajax/index.php",
-						  data: "method=order_synchronization&actionType=BookingAPINew&getid="+getid,
+						  data: "method=order_synchronization&actionType=order_lis_sync&getid="+getid,
 						  success: function(responseData)
 						  {
 							$('.order_api_onclick_'+getid).html('<i class="fas fa-info"></i>');

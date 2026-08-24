@@ -46,10 +46,14 @@ class _order_tracking_details extends controller
 			$orderNo = $rs_cust_detail[0]['customer_order_master_display_order_no'];
 			$customerName = $rs_cust_detail[0]['customer_members_prefix'] . ' ' . $rs_cust_detail[0]['customer_members_first_name'] . ' ' . $rs_cust_detail[0]['customer_members_last_name'];
 
-			// Call LIS API
+			$message = ["message" => mdrc_staging_disabled_message(), "msgCode" => "0"];
+			$opt = json_encode($message, JSON_UNESCAPED_UNICODE);
+			echo $this->app->utility->indent($opt);
+			exit;
+
 			$curl = curl_init();
 			curl_setopt_array($curl, [
-				CURLOPT_URL => LIS_API_URL . '/BookingAPI/TestStatusAPI',
+				CURLOPT_URL => '',
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_CUSTOMREQUEST => 'POST',
 				CURLOPT_POSTFIELDS => 'WorkOrderID=' . $visitor_id,

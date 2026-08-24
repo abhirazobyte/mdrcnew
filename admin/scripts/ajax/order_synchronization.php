@@ -22,7 +22,7 @@
   }
 exit; */
 
-// $orderResponse='{"age":"30","code":"200","gender":"Male","Message":"Success","patientId":"","billId":"MD136","url":"http://182.156.200.228/mdrcnew/Design/Lab/labreportnew.aspx?IsPrev=1&ReportID=1568041_52Z4P6&Phead=0","reportDetails":[{"testAmount":"2800.000000","testCode":"1262","testCategory":"","departmentName":"CT SCAN ","sampleId":"20429739","dictionaryId":0,"testID":0,"CentreReportId":4421387,"integrationCode":"","ledgertransactionno":"MS4445043","Password_web":"52Z4P6","testName":"NCCT HEAD"}]}';
+// Sample LIS response previously stored here for debugging; production LIS URL removed.
 
 // $orderResponse=json_decode($orderResponse,true);
 // print_r($orderResponse); 
@@ -31,13 +31,16 @@ exit; */
 $json_class = $app->load_module("JSON");
 $obj_json = new $json_class(JSON_LOOSE_TYPE);
 
-$url='https://lis6.mdrcindia.com/mdrcnew/api/BookingAPI/BookingAPINew';
-
-//get action
 $actionType=$app->getPostVar("actionType");
 
+if($actionType=="order_lis_sync")
+{
+	echo $obj_json->encode(array("RESULT"=>1,"msg"=>mdrc_staging_disabled_message()));
+	exit;
+}
+
 //Function
-if($actionType=="BookingAPINew")
+if($actionType=="order_lis_sync")
 {
 	$orderID=$app->getPostVar('getid');
 	if($orderID!= NULL && $orderID>0)

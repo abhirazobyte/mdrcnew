@@ -2,8 +2,8 @@
 include("../../core/app.php");
 $app = &app::get_instance();
 $app->initialize();
-
-$url='api/HomeAPI/GetAreaPincode';
+echo mdrc_staging_disabled_message();
+exit;
 $data=$app->utility->dataFromApi($url,$request_parameter);
 $result_data=json_decode($data, true);
 $allData=$result_data['data'];

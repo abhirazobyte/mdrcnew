@@ -59,18 +59,17 @@
 	/*================= DB Connection Info ==================*/
 	define("DB_HOST","localhost");
 	if(isset($_SESSION['admin']) && $_SESSION['admin']==5)
-	
 	{
-                define("DB_DATABASE","mdrcindia_db_demo2_clone");
-                define("DB_USERNAME","mdrcindia_clone");
-                define("DB_PASSWORD","MDRCINDIA@2026@");        
-        }
-        else
-        {
-                define("DB_DATABASE","mdrcindia_db_clone");
-                define("DB_USERNAME","mdrcindia_clone");
-                define("DB_PASSWORD","MDRCINDIA@2026@");
-        }
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");
+	}
+	else
+	{
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");
+	}
 	
 
 

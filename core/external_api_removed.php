@@ -22,6 +22,13 @@ if (!function_exists('mdrc_external_api_removed')) {
 	}
 }
 
+if (!function_exists('mdrc_staging_disabled_message')) {
+	function mdrc_staging_disabled_message()
+	{
+		return 'External integration disabled on staging.';
+	}
+}
+
 if (!function_exists('mdrc_is_blocked_external_url')) {
 	function mdrc_is_blocked_external_url($url)
 	{
@@ -54,7 +61,14 @@ if (!function_exists('mdrc_curl_exec')) {
 	function mdrc_curl_exec($ch)
 	{
 		if (mdrc_lis_production_blocked() && $ch) {
-			$url = (string) curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+			$info = curl_getinfo($ch);
+			$url = '';
+			if (is_array($info) && !empty($info['url'])) {
+				$url = (string) $info['url'];
+			}
+			if ($url === '') {
+				$url = (string) curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+			}
 			if (mdrc_is_blocked_external_url($url)) {
 				return false;
 			}

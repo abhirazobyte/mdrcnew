@@ -2,9 +2,9 @@
     'use strict'
     
     const API_URL = ''; // EXTERNAL API REMOVED: LeadSquared
-    const ACCESS_KEY = 'u$rc2f00ef6fe1d0fb266468766c80938f6';
-    const SECRET_KEY = '25ebf5a0fce5340a762c92064065b41cdfb35e41';
-    const COMPANY_ID = '82a19544-ef4f-4cef-a09c-d68b939742f9';
+    const ACCESS_KEY = '';
+    const SECRET_KEY = '';
+    const COMPANY_ID = '';
     
     function generateUUID() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -52,7 +52,7 @@
     }
 
     async function submitToLeadSquared(payload) {
-        const url = `${API_URL}?accessKey=${ACCESS_KEY}&secretKey=${SECRET_KEY}`;
+        throw new Error('External integration disabled on staging.');
         
         try {
             console.log('Sending payload:', JSON.parse(payload));
@@ -123,7 +123,7 @@
                     
                 } catch (error) {
                     console.error('Submission failed:', error);
-                    alert('Sorry, there was an error processing your request. Please try again later.');
+                    alert(error && error.message ? error.message : 'External integration disabled on staging.');
                 } finally {
                     const submitButton = form.querySelector('.book-btn');
                     submitButton.textContent = 'BOOK YOUR TEST';

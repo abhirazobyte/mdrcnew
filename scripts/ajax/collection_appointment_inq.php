@@ -1,5 +1,5 @@
 <?php
-	$block_lsq_integration = 1; // 1 = skip LeadSquared; set 0 to post to LeadSquared again
+	$block_lsq_integration = 1;
 
 	$name = $app->getPostVar("name");
 	$email = $app->getPostVar("email");
@@ -51,30 +51,9 @@
 			$app->utility->sendMial($data);
 			/*------------------End for mail function------------------*/
 
-		/*----------------- LeadSquared (optional)------------------------ */
-		if ( ! $block_lsq_integration ) {
-		$ch = curl_init();
-		$accessKey=CRM_ACCESS_ID;
-		$secretKey=CRM_SECRET_KEY;
-		$lsqNotes = 'Home sample / collection - ref: ' . (string) $reference . ( $brief_details !== '' ? (' | ' . $brief_details) : '' );
-		$data=[
-			["Attribute"=>"FirstName","Value"=>$name],
-			["Attribute"=>"mx_Department","Value"=>'Pathology'],
-			["Attribute"=>"Phone","Value"=>$phone],
-			["Attribute"=>"EmailAddress","Value"=>$email],
-			["Attribute"=>"mx_City","Value"=>$city],
-			["Attribute"=>"Source","Value"=>"Website"],
-			["Attribute"=>"Notes","Value"=>$lsqNotes],
-		];
-		curl_setopt($ch,CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-		curl_setopt($ch, CURLOPT_URL,'https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?accessKey='.$accessKey.'&secretKey='.$secretKey);
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($data));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = mdrc_curl_exec($ch);
-		$response=json_decode($response,true);
-		curl_close($ch);
-		}
+		/*----------------- LeadSquared disabled on staging ------------------------ */
+
+
 
 		/*----------------- Frappe (same webhook as test booking)----------- */
 		$frappeUrl = FRAPPE_WEBSITE_ENQUIRY_URL;

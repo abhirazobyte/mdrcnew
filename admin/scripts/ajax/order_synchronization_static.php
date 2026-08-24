@@ -2,13 +2,16 @@
 $json_class = $app->load_module("JSON");
 $obj_json = new $json_class(JSON_LOOSE_TYPE);
 
-$url='http://182.156.200.228/mdrcnew/api/BookingAPI/BookingAPINew';
-
-//get action
 $actionType=$app->getPostVar("actionType");
 
+if($actionType=="order_lis_sync")
+{
+	echo $obj_json->encode(array("RESULT"=>1,"msg"=>mdrc_staging_disabled_message()));
+	exit;
+}
+
 //Function
-if($actionType=="BookingAPINew")
+if($actionType=="order_lis_sync")
 {
 	$orderID=$app->getPostVar('getid');
 	if($orderID!= NULL && $orderID>0)

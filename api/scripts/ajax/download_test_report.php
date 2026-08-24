@@ -16,9 +16,12 @@ if($visitor_id!='' && $lab_password!='')
         exit;
     }
 
+    echo $obj_json->encode(array("RESULT"=>"NOT OK","MSG"=>mdrc_staging_disabled_message()));
+    exit;
+
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => LIS_API_URL.'/BookingAPI/TestStatusAPI',
+      CURLOPT_URL => '',
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_CUSTOMREQUEST => 'POST',
       CURLOPT_POSTFIELDS => 'WorkOrderID='.$visitor_id.'',
@@ -75,7 +78,7 @@ if($visitor_id!='' && $lab_password!='')
         
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL =>  LIS_API_URL.'/PatientLabReport/LabReportLink?FromDate='.$todaydate.'&ToDate='.$todaydate1.'&MobileNo='.$mobile,
+        CURLOPT_URL =>  '',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_HTTPHEADER =>array('Content-Length: 0')
@@ -101,7 +104,7 @@ if($visitor_id!='' && $lab_password!='')
         if($api_response['success']=='true') {
             $RESULT='OK';
             $MSG=$api_response['message'];
-            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"http://182.156.200.228/mdrcnew/Design/Lab/labreportnew.aspx?reportid=".$visitor_id."_".$lab_password));
+            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>""));
             exit;
         }*/
 

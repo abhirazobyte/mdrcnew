@@ -1,5 +1,5 @@
 <?php
-	$block_lsq_integration = 1; // 1 = skip LeadSquared; set 0 to post to LeadSquared again
+	$block_lsq_integration = 1;
 
 	//--------
 
@@ -45,7 +45,7 @@
 			$curlFile = new CURLFile($filePath, $mimeType, basename($filePath));
 	
 			// curl_setopt_array($curl, array(
-			// 	CURLOPT_URL => 'https://files-in21.leadsquared.com/File/Upload',
+			// 	CURLOPT_URL => '',
 			// 	CURLOPT_RETURNTRANSFER => true,
 			// 	CURLOPT_ENCODING => '',
 			// 	CURLOPT_MAXREDIRS => 10,
@@ -113,43 +113,9 @@
 		$app->utility->sendMial($data);
 		/*------------------End for mail function------------------*/
 
-		/*----------------- create CRM Lead (LeadSquared)------------------------ */
+		/*----------------- LeadSquared disabled on staging ------------------------ */
 
-		if ( ! $block_lsq_integration ) {
-		$ch = curl_init();
-		$accessKey=CRM_ACCESS_ID;
-		$secretKey=CRM_SECRET_KEY;
 
-		if($test_type=='Blood Test')
-		{
-			$department='Pathology';
-		}
-		else
-		{
-			$department='Radiology';
-		}
-
-		$data=[
-			["Attribute"=>"FirstName","Value"=>$name],
-			["Attribute"=>"mx_Department","Value"=>$department],
-			["Attribute"=>"Phone","Value"=>$phone],
-			["Attribute"=>"mx_City","Value"=>$city],
-			["Attribute"=>"Source","Value"=>"Website"],
-			["Attribute"=>"Notes","Value"=>$test_type],
-		];
-		if(!empty($s3FilePath)){
-			array_push($data,["Attribute"=>"mx_CustomObject_111","Value"=>$curlFile]);
-		}
-		curl_setopt($ch,CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-		curl_setopt($ch, CURLOPT_URL,'https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?accessKey='.$accessKey.'&secretKey='.$secretKey);
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($data));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$response = mdrc_curl_exec($ch);
-		$response=json_decode($response,true);
-		//print_r($response);exit;
-		curl_close($ch);
-		}
 
 		// if(!empty($_FILES['pre_file']['name']))
 		// {
@@ -160,7 +126,7 @@
 		// 	$curlFile = new CURLFile($filePath, $mimeType, basename($filePath));
 	
 		// 	curl_setopt_array($curl, array(
-		// 		CURLOPT_URL => 'https://files-in21.leadsquared.com/File/Upload',
+		// 		CURLOPT_URL => '',
 		// 		CURLOPT_RETURNTRANSFER => true,
 		// 		CURLOPT_ENCODING => '',
 		// 		CURLOPT_MAXREDIRS => 10,

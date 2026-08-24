@@ -18,7 +18,7 @@ for($i=0;$i<count($allData);$i++)
 	
 	
 	
-	$url1='api/HomeAPI/GetItemInClusion';
+	$url1='';
 	$request_parameter1="Itemid=".$itemid;
 	$data1=$app->utility->dataFromApi($url1,$request_parameter1);
 	$result_data1=json_decode($data1, true);

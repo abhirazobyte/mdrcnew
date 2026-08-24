@@ -52,9 +52,16 @@ if($orderID!='' && $orderCustomerMemeberID!='')
     //$lab_password='B3F4B2';
     $orderNo=$rs_cust_detail[0]['customer_order_master_display_order_no'];
     $customerName=$rs_cust_detail[0]['customer_members_prefix'].' '.$rs_cust_detail[0]['customer_members_first_name'].' '.$rs_cust_detail[0]['customer_members_last_name'];
+    $no_detail_html='<div class="col-lg-12 text-center">
+				<img class="carimg" src="images/empry-cart-main.png">
+				<h5 class="mt-0">'.htmlspecialchars(mdrc_staging_disabled_message()).'</h5>
+        </div>';
+    echo $obj_json->encode(array("RESULT"=>"NOT OK","MSG"=>mdrc_staging_disabled_message(),"HTML"=>$no_detail_html));
+    exit;
+
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => LIS_API_URL.'/BookingAPI/TestStatusAPI',
+      CURLOPT_URL => '',
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_CUSTOMREQUEST => 'POST',
       CURLOPT_POSTFIELDS => 'WorkOrderID='.$visitor_id.'',
@@ -115,7 +122,7 @@ if($orderID!='' && $orderCustomerMemeberID!='')
 
         if($report_ready)
         {
-            $URL="http://182.156.200.228/mdrcnew/Design/Lab/labreportnew.aspx?reportid=".$visitor_id."_".$lab_password;
+            $URL="";
             $button_html.='<li><a href="'.$URL.'" class="btn-main bg-btn3 lnk w-100 mt10">Download Report<span class="circle"></span> </a></li>';
         } else { 
             $button_html.='<li><a href="javascript:void(0)" class="btn-main bg-btn5 lnk w-100 mt10">Report is not Ready<span class="circle"></span> </a></li>';
@@ -184,7 +191,7 @@ if($orderID!='' && $orderCustomerMemeberID!='')
         
         $curl = curl_init();
         curl_setopt_array($curl, array(
-        CURLOPT_URL =>  LIS_API_URL.'/PatientLabReport/LabReportLink?FromDate='.$todaydate.'&ToDate='.$todaydate1.'&MobileNo='.$mobile,
+        CURLOPT_URL =>  '',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_HTTPHEADER =>array('Content-Length: 0')
@@ -210,7 +217,7 @@ if($orderID!='' && $orderCustomerMemeberID!='')
         if($api_response['success']=='true') {
             $RESULT='OK';
             $MSG=$api_response['message'];
-            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>"http://182.156.200.228/mdrcnew/Design/Lab/labreportnew.aspx?reportid=".$visitor_id."_".$lab_password));
+            echo $obj_json->encode(array("RESULT"=>$RESULT,"MSG"=>$MSG,"API"=>$api_response,"URL"=>""));
             exit;
         }*/
 

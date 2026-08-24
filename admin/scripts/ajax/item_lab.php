@@ -292,85 +292,8 @@ if($actionType=="item_labMultiDelete")
 // -------------------- SYNC RECORD & MAP --------------------
 if($actionType=="sync_department")
 {
-	$names=[];
-	$rate_list_panel_id=$app->getPostVar('rate_list_panel_id');
-
-	$obj_model_user = $app->load_model("lis_item_department");
-	$lis_item_department=$obj_model_user->execute("SELECT",false,"","status!='Trash'");
-	$names = array_column($lis_item_department,'name');
-	
-	if(!empty($rate_list_panel_id)){
-	
-		$curl = curl_init();
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => 'http://182.156.200.228/mdrcnew/api/HomeAPI/GetItemListPanel',
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => '',
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 0,
-		CURLOPT_FOLLOWLOCATION => true,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => 'POST',
-		CURLOPT_POSTFIELDS => 'PanelID='.$rate_list_panel_id,
-		CURLOPT_HTTPHEADER => array(
-			'Content-Type: application/x-www-form-urlencoded'
-		),
-		));
-		$response = mdrc_curl_exec($curl);
-		curl_close($curl);
-		$responseData=json_decode($response,true);
-		
-		if($responseData['status']=='1')
-		{
-			foreach($responseData['data'] as $item)
-			{
-	
-				if(!in_array(trim($item['DepartmentName']),$names))
-				{
-					$data=array();
-
-					$slug=$app->utility->unique_slug('lis_item_department','add','slug',trim($item['DepartmentName']),'');
-
-					$data['name']=trim($item['DepartmentName']);
-					$data['slug']=$slug;
-					$data['status']='Active';
-					$data['entry_date_time']=date('d-m-Y H:i:s');
-
-					$obj_model_user = $app->load_model("lis_item_department");
-					$obj_model_user->map_fields($data);
-					$obj_model_user->execute("INSERT",false,"","");
-
-
-
-					array_push($names,trim($item['DepartmentName']));
-				}
-			}
-
-			$obj_model_user = $app->load_model("item_lab");
-			$lis_item_lab=$obj_model_user->execute("SELECT",false,"","rate_list_panel_id='".$rate_list_panel_id."'");
-			if(count($lis_item_lab)>0)
-			{
-				$excluding_department=explode(',',$lis_item_lab[0]['excluding_department_names']);
-
-				$obj_model_user = $app->load_model("lis_item_department");
-				$lisItemDepartment=$obj_model_user->execute("SELECT",false,"","");
-
-				$result = array_values(array_diff(array_column($lisItemDepartment,'id'), $excluding_department));
-			
-				$update_field = array();
-				$update_field['department_names'] = implode(',',$result);
-				$obj_model_user = $app->load_model("item_lab");
-				$obj_model_user->map_fields($update_field);
-				$obj_model_user->execute("UPDATE",false,"","rate_list_panel_id='".$rate_list_panel_id."'");
-			}
-
-			$msg='Success';
-			$msgcode=0;
-		}
-	}else{
-		$msg='Please Try Again.';
-		$msgcode=1;
-	}
+	$msg=mdrc_staging_disabled_message();
+	$msgcode=1;
 }
 
 		

@@ -551,25 +551,7 @@ if($actionType=="sync_lis_test_item")
 			{
 				$_SESSION['temp_check'][]=$string;
 
-				$curl = curl_init();
-
-				curl_setopt_array($curl, array(
-				CURLOPT_URL => 'https://lis6.mdrcindia.com/mdrcnew/api/HomeAPI/GetItemListPanel',
-				CURLOPT_RETURNTRANSFER => true,
-				CURLOPT_ENCODING => '',
-				CURLOPT_MAXREDIRS => 10,
-				CURLOPT_TIMEOUT => 0,
-				CURLOPT_FOLLOWLOCATION => true,
-				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-				CURLOPT_CUSTOMREQUEST => 'POST',
-				CURLOPT_POSTFIELDS => 'PanelID='.$lab['rate_list_panel_id'],
-				CURLOPT_HTTPHEADER => array(
-					'Content-Type: application/x-www-form-urlencoded'
-				),
-				));
-				$response = mdrc_curl_exec($curl);
-				curl_close($curl);
-				$responseData=json_decode($response,true);
+				$responseData=array();
 				
 				$city_id=[];
 				$existsId=[];
