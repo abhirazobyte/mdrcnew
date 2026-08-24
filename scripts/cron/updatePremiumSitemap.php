@@ -1,4 +1,5 @@
 <?php
+exit; // SEO REMOVED: sitemap generation disabled
 include("../../core/app.php");
 $app = &app::get_instance();
 $app->initialize();

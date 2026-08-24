@@ -867,8 +867,6 @@
 		
 		$tmpStr.="<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n";
 		$tmpStr.="<title>".$this->getPageTitle()."</title>\n";
-		$tmpStr.="<meta name=\"description\" content=\"".$this->getMetaDescription()."\"/>\n";
-		$tmpStr.="<meta name=\"keywords\" content=\"".$this->getMetaKeywords()."\"  />\n";
 		$tmpStr.="<link rel=\"icon\" type=\"image/x-icon\" href=\"assets/images/favicon.png\">\n";
 		$tmpStr.="\n";
 		$tmpStr.='
@@ -911,9 +909,6 @@
 			$tmpStr.="<meta charset=\"utf-8\">\n";
 			$tmpStr.="<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n";
 			$tmpStr.="<title>".$this->getPageTitle()."</title>\n";
-			$tmpStr.="<meta name=\"description\" content=\"".$this->getMetaDescription()."\"/>\n";
-			$tmpStr.="<meta name=\"keywords\" content=\"".$this->getMetaKeywords()."\"  />\n";
-			$tmpStr.="<link rel=\"canonical\" href=\"https://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]."\">\n";
 			$tmpStr.="<link rel=\"icon\" type=\"image/ico\" href=\"images/favicon.png\">\n";
 			$tmpStr.="\n";
 			
@@ -928,12 +923,6 @@
 
 			$tmpStr.="\n";
 			// EXTERNAL API REMOVED: Cloudflare Turnstile
-			$tmpStr.="\n";
-			if(!empty($this->getMetaSchema())){
-				$tmpStr.="\n";
-				$tmpStr.=$this->getMetaSchema();
-				$tmpStr.="\n";
-			}
 			$tmpStr.="\n";
 
 			 $tmpStr.="</head>\n";

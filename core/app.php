@@ -860,21 +860,13 @@
 		$tmpStr.="\n";
 		$tmpStr.="<head>\n";
 		
-		$tmpStr.="<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M26TV87');</script>
-<!-- End Google Tag Manager -->";
+		$tmpStr.="<meta name='robots' content='noindex,nofollow'/>\n";
 		$tmpStr.="\n";
 
 		$tmpStr.="<meta http-equiv=\"Content-Type\" charset=\"text/html; charset=UTF-8\">\n";
 		
 		$tmpStr.="<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n";
 		$tmpStr.="<title>".$this->getPageTitle()."</title>\n";
-		$tmpStr.="<meta name=\"description\" content=\"".$this->getMetaDescription()."\"/>\n";
-		$tmpStr.="<meta name=\"keywords\" content=\"".$this->getMetaKeywords()."\"  />\n";
 		$tmpStr.="<link rel=\"icon\" type=\"image/x-icon\" href=\"assets/images/favicon.png\">\n";
 		$tmpStr.="\n";
 		$tmpStr.='
@@ -911,21 +903,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			$tmpStr.="\n";
 			$tmpStr.="<head>\n";
 			
-			$tmpStr.="<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M26TV87');</script>
-<!-- End Google Tag Manager -->";
+			$tmpStr.="<meta name='robots' content='noindex,nofollow'/>\n";
 			$tmpStr.="\n";
 			
 			$tmpStr.="<meta charset=\"utf-8\">\n";
 			$tmpStr.="<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n";
 			$tmpStr.="<title>".$this->getPageTitle()."</title>\n";
-			$tmpStr.="<meta name=\"description\" content=\"".$this->getMetaDescription()."\"/>\n";
-			$tmpStr.="<meta name=\"keywords\" content=\"".$this->getMetaKeywords()."\"  />\n";
-			$tmpStr.="<link rel=\"canonical\" href=\"https://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]."\">\n";
 			$tmpStr.="<link rel=\"icon\" type=\"image/ico\" href=\"images/favicon.png\">\n";
 			$tmpStr.="\n";
 			
@@ -936,32 +919,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			$tmpStr.="<link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap\" rel=\"stylesheet\">\n";
 			 
 			$tmpStr.="\n";
-			$tmpStr.="<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2118719105254874');
-fbq('track', 'PageView');
-</script>
-<noscript><img height=\"1\" width=\"1\" style=\"display:none\"
-src=\"https://www.facebook.com/tr?id=2118719105254874&ev=PageView&noscript=1\"
-/></noscript>
-<!-- End Meta Pixel Code -->";
-
-			$tmpStr.="\n";
 			// EXTERNAL API REMOVED: Cloudflare Turnstile
-			$tmpStr.="\n";
-			if(!empty($this->getMetaSchema())){
-				$tmpStr.="\n";
-				$tmpStr.=$this->getMetaSchema();
-				$tmpStr.="\n";
-			}
 			$tmpStr.="\n";
 
 			 $tmpStr.="</head>\n";
@@ -1070,10 +1028,6 @@ src=\"https://www.facebook.com/tr?id=2118719105254874&ev=PageView&noscript=1\"
 					$tmpStr.="<body class=\"kalles-template single-product-template zoom_tp_2 header_full_true des_header_3 css_scrollbar lazy_icons btnt4_style_2 css_scrollbar template-index kalles_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true hide_scrolld_true lazyload\">";
 				}
 				$tmpStr.="\n";
-				$tmpStr.='<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26TV87" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->';
-$tmpStr.="\n";
 	
 	
 			}

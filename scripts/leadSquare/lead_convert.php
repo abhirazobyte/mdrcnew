@@ -96,30 +96,17 @@ $date="2025-07-28";
 <html>
 
 <head>
-
-   <script>
-   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M26TV87');
-    </script>
-
+<meta name="robots" content="noindex,nofollow">
 </head>
 
 <body>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26TV87" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
 
 </body>
 
 <?php foreach ($gclId as $id){ ?>
-<script>
-    gtag('event', 'conversion', {
-      'send_to': 'AW-10962550867/DEfFCNeYv_kYENOAreso',
-      'gclid':'<?php echo $id; ?>'  
-    });
-</script>
+
 <?php } ?>
 
 </html>
