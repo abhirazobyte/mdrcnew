@@ -919,7 +919,7 @@
 			$tmpStr.="<link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap\" rel=\"stylesheet\">\n";
 			 
 			$tmpStr.="\n";
-			// EXTERNAL API REMOVED: Cloudflare Turnstile
+			$tmpStr.='<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
 			$tmpStr.="\n";
 
 			 $tmpStr.="</head>\n";

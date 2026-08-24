@@ -3051,9 +3051,6 @@ function get_sms_template($sms_type)
 
 function get_sms_balance()
 {
-		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
-			return '';
-		}
 		$curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://control.msg91.com/api/balance.php?authkey=368534AnUMuT68h4J6167e05cP1&type=4",
@@ -3101,7 +3098,7 @@ function send_sms_new($mb,$sms_type,$default_string,$new_string)
 		$template_id=$rs_data[0]['template_id'];
 		$sms_text=$rs_data[0]['sms_text'];
 		$message_text=str_replace($default_string, $new_string, $sms_text);
-		if($mb!='9510069163' && $mb!='1234567890' && !(function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()))
+		if($mb!='9510069163' && $mb!='1234567890')
 		{
 			$username='mdrcindia.com';
 			$password='78917494';
@@ -7302,9 +7299,6 @@ function load_blogs($data,$limit,$category_id,$tag_id,$serach_keyword,$total_blo
 
 	function getCloudFareCaptchaVerify($token=null)
 	{
-		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
-			return ["status"=>1,"message"=>"verfied"];
-		}
 		$secretKey = '0x4AAAAAAAbKtpmPV8PzAw4pMOrmEkFlttQ';
 
 		if (empty($token)) {
@@ -7620,9 +7614,6 @@ function load_blogs($data,$limit,$category_id,$tag_id,$serach_keyword,$total_blo
 
 	function razorpay_create_order($field_list, $url)
 	{
-		if (function_exists('mdrc_external_api_removed') && mdrc_external_api_removed()) {
-			return '';
-		}
 		$key=RAZOR_PAY_KEY;
 		$secret=RAZOR_PAY_SECRET;
 		$field_list = json_encode($field_list);

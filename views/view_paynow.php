@@ -97,5 +97,5 @@
 <!--common script file-->
 <script src="js/main.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js'></script>
-<!-- EXTERNAL API REMOVED: Razorpay -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <?php include 'includes/general_data.php'; ?>

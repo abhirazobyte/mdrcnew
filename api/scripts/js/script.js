@@ -17,7 +17,7 @@ $(document).on("click", ".leadsquareSubmit", function () {
             $.ajax({
                 dataType: 'html',
                 type: "POST",
-                url: "https://www.mdrcindia.com/scripts/ajax/index.php",
+                url: "/scripts/ajax/index.php",
                 data: dataString,
                 cache: false,
                 contentType: false,

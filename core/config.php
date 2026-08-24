@@ -59,15 +59,15 @@
 	define("DB_HOST","localhost");
 	if(isset($_SESSION['admin']) && $_SESSION['admin']==5)
 	{
-		define("DB_DATABASE","mdrcindia_db_demo2_clone");
-		define("DB_USERNAME","mdrcindia_clone");
-		define("DB_PASSWORD","MDRCINDIA@2026@");	
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");	
 	}
 	else
 	{
-		define("DB_DATABASE","mdrcindia_db_clone");
-		define("DB_USERNAME","mdrcindia_clone");
-		define("DB_PASSWORD","MDRCINDIA@2026@");
+		define("DB_DATABASE","mdrcindia_db_test");
+		define("DB_USERNAME","mdrcindia_test");
+		define("DB_PASSWORD","MdrcTest@2026#Secure");
 	}
 	
 
@@ -148,11 +148,11 @@
 	define("CCA_MERCHANT_ID", "381290");
 	define("CCA_ACCESS_CODE", "AVWU07ID80BT16UWTB");
 	define("CCA_WORKING_KEY", "636CC2C22573FA93F70D751324881CB1");
-	define("CCA_RETURN_URL", "https://www.mdrcindia.com/payment-process");
-	define("CCA_CANCEL_URL", "https://www.mdrcindia.com/payment-process");
-	define("M_CCA_RETURN_URL", "https://www.mdrcindia.com/payment-process");
-	define("M_CCA_CANCEL_URL", "https://www.mdrcindia.com/payment-process");
-	define("CCA_URL", "");
+	define("CCA_RETURN_URL", "https://server.razobyte.com/payment-process");
+	define("CCA_CANCEL_URL", "https://server.razobyte.com/payment-process");
+	define("M_CCA_RETURN_URL", "https://server.razobyte.com/payment-process");
+	define("M_CCA_CANCEL_URL", "https://server.razobyte.com/payment-process");
+	define("CCA_URL", "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction");
 	/*=======================================================*/
 
 
@@ -205,8 +205,8 @@
 	define("FRAPPE_ENQUIRY_SOURCE_COLLECTION", "collection_appointment");
 	define("FRAPPE_ENQUIRY_SOURCE_CORPORATE", "corporate_tieup_enquiry");
 
-	define("RAZOR_PAY_KEY", '');
-	define("RAZOR_PAY_SECRET", "");
+	define("RAZOR_PAY_KEY", 'rzp_live_SXp7NrguqIFLLC');
+	define("RAZOR_PAY_SECRET", "bACqM1TrjZpTx8xAOkcTiAMX");
 
     /*=======================================================*/
 

@@ -1,5 +1,5 @@
 <?php include('includes/header.php'); ?>
-<!-- <!-- EXTERNAL API REMOVED: Cloudflare Turnstile -->
+<!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
 <?php

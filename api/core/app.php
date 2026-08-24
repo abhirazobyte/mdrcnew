@@ -922,7 +922,7 @@
 
 
 			$tmpStr.="\n";
-			// EXTERNAL API REMOVED: Cloudflare Turnstile
+			$tmpStr.='<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>';
 			$tmpStr.="\n";
 
 			 $tmpStr.="</head>\n";
